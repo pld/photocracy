@@ -1,0 +1,61 @@
+== UNFINISHED CODE
+* Be wary this code is unfinished and lacking needed testing
+* Be wary this WAS NOT built to be secure
+
+== Missing Credentials
+* config/database.yml
+* config/deploy.rb
+* config/environment.rb
+* config/initializer/geokit.rb
+* config/initializer/pairwise_service.rb
+* config/initializer/plugin_ext.rb
+* config/initializer/site_keys.rb
+* config/mailer.yml
+* db/bootstrap/users.yml
+* lib/constants.rb
+
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+== Server Limitations
+* files over 10m will be dropped
+* http connection will drop after ~65s (i.e. long running uploads)
+
+== Production Deploy Procedure
+* tag release
+** svn copy
+* change config/deploy.rb: correct tag, svn pull from tags, set version variable to ""
+* change config/environment.rb: PRODUCTION = true
+* change db/bootstrap/users.yml: set voter_ext_id for users to production id
+** only needed if you plan on running db:bootstrap
+* log analysis
+** ./vendor/plugins/oink/bin/oink --threshold=1 log/development.log
+** ./vendor/plugins/oink/bin/oink --threshold=1 log/production.log
+** rails_stat log/development.log
+** pl_analyze log/development.log
+** pl_analyze log/production.log
+* load test httperf
+** httperf --hog --server=www.photocracy.org --num-conns=100 --rate=2 --timeout=5 --think−timeout=5
+** httperf --hog --server=www.photocracy.org --num-conns=1000 --rate=1 --timeout=5 --think−timeout=5 --session-cookie
+** httperf --hog --server=www.photocracy.org --wsess=100,10,2 --rate=1 --timeout=5 --think−timeout=5 --session-cookie
+** httperf --hog --server=www.photocracy.org --wsess=10,5,2 --rate=1 --timeout=5 --think−timeout=5 --session-cookie
+
+== Migration Procedure
+sudo RAILS_ENV=production rake db:drop && sudo RAILS_ENV=production rake db:create && sudo RAILS_ENV=production rake db:migrate && sudo RAILS_ENV=production rake db:bootstrap
+
+== Staging Access
+
+== Data
+
+== Disabled
+* language
+** application controller
+*** line 19, def clear_track_set_get
+*** line 139, def locale
+** shared/header view
+
+== Deploy Notes
+* Memory Leaks
+** reset session
+** geo_ip
+** post deploy wierdness that goes away after monit stop, wait and monit validate?
