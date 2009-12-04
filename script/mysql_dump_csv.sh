@@ -1,0 +1,28 @@
+dump_csv()
+{
+  path=/Users/kg/Sites/princeton/photocracy/trunk/public/admin/data/csv/$1_
+  name=`date +%Y%m%d%H%M`.csv
+  mysql -u $4 --password=$4 $3 -B -e "$2" > $path$name
+#  mysql -u $4 --password=$4 $3 -B -e "$2"| tr '\t' ',' > $path$name
+#  ln -sf "${path}${name}" "${path}latest.csv"
+}
+photo_dump_csv()
+{
+  dump_csv $1 "$2" photocracy princeton
+}
+pair_dump_csv()
+{
+  dump_csv $1 "$2" pairwise princeton
+}
+
+photo_dump_csv responses_visits "SELECT responses.id AS response_id, left_item.id AS left_photo_id, right_item.id AS right_photo_id, winning_item.id AS winning_photo_id, prompts.question_id, visits.id as visit_id, visits.user_id, users.state LIKE 'admin' AS is_admin, visits.ip_address, visits.ip_country_code, visits.ip_country_name, visits.ip_city, visits.ip_latitude, visits.ip_longitude, visits.ip_area_code, visits.ip_region, visits.referrer, responses.response_time, responses.created_at FROM responses LEFT OUTER JOIN items_responses ON (responses.id=items_responses.response_id) LEFT OUTER JOIN items AS winning_item ON (items_responses.item_id=winning_item.id) INNER JOIN prompts ON (prompts.id=responses.prompt_id) INNER JOIN items_prompts ON (items_prompts.prompt_id=prompts.id) INNER JOIN items AS left_item ON (items_prompts.item_id=left_item.id) INNER JOIN items_prompts AS right_items_prompts ON (right_items_prompts.prompt_id=prompts.id AND right_items_prompts.item_id!=left_item.id) INNER JOIN items AS right_item ON (right_items_prompts.item_id=right_item.id) INNER JOIN visits ON (responses.visit_id=visits.id) LEFT OUTER JOIN users ON (visits.user_id=users.id) GROUP BY responses.id ORDER BY responses.created_at;"
+
+photo_dump_csv responses_visits_trackings "SELECT responses.id AS response_id, left_item.id AS left_photo_id, right_item.id AS right_photo_id, winning_item.id AS winning_photo_id, prompts.question_id, visits.id as visit_id, visits.user_id, users.state LIKE 'admin' AS is_admin, visits.ip_address, visits.ip_country_code, visits.ip_country_name, visits.ip_city, visits.ip_latitude, visits.ip_longitude, visits.ip_area_code, visits.ip_region, visits.referrer, responses.response_time, responses.created_at, trackings.mouse FROM responses LEFT OUTER JOIN items_responses ON (responses.id=items_responses.response_id) LEFT OUTER JOIN items AS winning_item ON (items_responses.item_id=winning_item.id) INNER JOIN prompts ON (prompts.id=responses.prompt_id) INNER JOIN items_prompts ON (items_prompts.prompt_id=prompts.id) INNER JOIN items AS left_item ON (items_prompts.item_id=left_item.id) INNER JOIN items_prompts AS right_items_prompts ON (right_items_prompts.prompt_id=prompts.id AND right_items_prompts.item_id!=left_item.id) INNER JOIN items AS right_item ON (right_items_prompts.item_id=right_item.id) INNER JOIN visits ON (responses.visit_id=visits.id) LEFT OUTER JOIN users ON (visits.user_id=users.id) INNER JOIN trackings ON (trackings.visit_id=visits.id AND trackings.controller LIKE 'responses' AND trackings.action LIKE 'create') GROUP BY responses.id ORDER BY responses.created_at;"
+
+photo_dump_csv photos "SELECT items.id AS photo_id, items.item_id_ext AS pairwise_photo_id, items.external_link, visits.id AS visit_id, items_questions.question_id AS question_id, items_questions.ratings, items_questions.wins, items_questions.losses, items.created_at, flickrs.num_comments, TRIM(SUBSTRING_INDEX(SUBSTR(flickrs.country, 48), '\n', 1)) AS country, flickrs.region, users.email, users.id, users.state LIKE 'admin' AS uploaded_by_admin, visits.ip_country_name AS country_of_upload, attachments.filename, parent_attachments.id, items.active FROM items INNER JOIN items_questions ON (items.id=items_questions.item_id) LEFT OUTER JOIN flickrs ON (items.id=flickrs.item_id) INNER JOIN visits ON (items.visit_id=visits.id) INNER JOIN users ON (visits.user_id=users.id) INNER JOIN attachments AS parent_attachments ON (items.attachment_id=parent_attachments.id) INNER JOIN attachments ON (attachments.parent_id=parent_attachments.id AND attachments.thumbnail LIKE 'compare');"
+ 
+photo_dump_csv users "SELECT users.id AS user_id, users.email, profiles.country, profiles.locale, profiles.date_of_birth, birth_pq.value AS birth_country, language_pq.value AS language, education_pq.value AS education, visits.ip_country_name AS visit_country, visits.ip_address, COUNT(items.id) AS num_uploads, COUNT(comments.id) AS num_comments, COUNT(visits.id) AS num_visits FROM users LEFT OUTER JOIN profiles ON (profiles.user_id=users.id) INNER JOIN visits ON (visits.user_id=users.id) LEFT OUTER JOIN items ON (items.visit_id=visits.id) LEFT OUTER JOIN comments ON (comments.visit_id=visits.id) LEFT OUTER JOIN profile_questions AS birth_pq ON (birth_pq.profile_id=profiles.id AND birth_pq.name LIKE 'birth_country') LEFT OUTER JOIN profile_questions AS language_pq ON (language_pq.profile_id=profiles.id AND language_pq.name LIKE 'language') LEFT OUTER JOIN profile_questions AS education_pq ON (education_pq.profile_id=profiles.id AND education_pq.name LIKE 'education')GROUP BY users.id;"
+ 
+pair_dump_csv pairwise_stats "SELECT stats.question_id, stats.views, stats.votes, stats.score, stats.updated_at, left_item.id AS left_photo_id, right_item.id AS right_photo_id FROM stats INNER JOIN items_stats ON (items_stats.stat_id=stats.id) INNER JOIN items AS left_item ON (items_stats.item_id=left_item.id) INNER JOIN items_stats AS right_items_stats ON (right_items_stats.stat_id=stats.id AND right_items_stats.item_id!=left_item.id) INNER JOIN items AS right_item ON (right_items_stats.item_id=right_item.id) GROUP BY stats.id;"
+
+photo_dump_csv tags "SELECT tags.name, taggings.taggable_id AS photo_id, taggings.context FROM tags INNER JOIN taggings ON (tags.id=taggings.tag_id) ORDER BY photo_id;"

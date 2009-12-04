@@ -1,0 +1,63 @@
+%h1 Showing User
+
+%table
+  %tr
+    %td Login
+    %td= @user.login
+  %tr
+    %td Email
+    %td= @user.email
+  %tr
+    %td Created
+    %td= @user.created_at.to_s(:long)
+  - if ['active', 'admin'].include?(@user.state)
+    %tr
+      %td Activated
+      %td= @user.activated_at.to_s(:long)
+  %tr
+    - visit = @user.visits.last
+    %td Last Visit
+    %td
+  %tr
+    %td Time
+    %td= visit.created_at.to_s(:long)
+  %tr
+    %td Country
+    %td= visit.ip_country_name
+  %tr
+    %td City
+    %td= visit.ip_city
+  %tr
+    %td User Agent
+    %td= visit.user_agent
+  %tr
+    %td Referrer
+    %td= visit.referrer
+  %tr
+    %td State
+    %td= @user.state
+  %tr
+    %td Actions
+    %td
+      -if @user.state == 'suspended'
+        = link_to 'Unsuspend', unsuspend_admin_user_path(@user)
+      -else
+        = link_to 'Suspend', suspend_admin_user_path(@user)
+      -if @user.state == 'active'
+        = link_to 'Make Admin', admin_admin_user_path(@user)
+      -elsif @user.state == 'admin'
+        = link_to 'Remove Admin', active_admin_user_path(@user)
+      = link_to 'Delete', admin_user_path, :method => :delete, :id => @user, :confirm => "Confirm delete user: #{@user.email}?"
+  -unless (items = @user.visits.map { |v| v.items }.flatten).empty?
+    %tr
+      %td Items
+      %td
+        -items.each do |item|
+          = item_display(item, :thumb)
+  -unless (comments = @user.visits.map { |v| v.comments }.flatten).empty?
+    %tr
+      %td Comments
+      %td
+        -comments.each do |comment|
+          %p= comment.content
+= link_to 'Back', admin_users_path

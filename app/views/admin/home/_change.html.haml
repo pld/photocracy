@@ -1,0 +1,6 @@
+%ul
+  %li= link_to_function('change', "$('##{lid}').toggle()")
+  %li{:id => lid, :style => "display:none"}
+    -form_remote_tag :url => { :action => :settings, :id => id } do
+      = text_field_tag :value, value
+      = submit_tag

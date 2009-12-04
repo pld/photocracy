@@ -1,0 +1,16 @@
+%p
+  = t('users.welcome')
+  %strong== #{link_to(@current_user_email, profile_path(1))}!
+  = t('users.you_have_rated')
+  %strong
+    == <span id="rated">#{pluralize(@items_rated, t('users.vote'))}</span>!
+%p
+  = t('users.this_makes')
+  %strong= (@rank > 1 ? @rank.ordinalize : t('users.most'))
+  = t('users.influential_rater')
+%p.last
+  = t('users.photos_added')
+  %strong= pluralize(@items, t('items.photo'))
+  = @items != 1 ? t('users.have_received') : t('users.has_received')
+  %strong== #{pluralize(@items_votes, t('stats.vote'))}!
+  %strong= link_to(t('nav.add').capitalize, new_item_path)

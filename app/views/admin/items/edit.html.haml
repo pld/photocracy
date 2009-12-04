@@ -1,0 +1,15 @@
+%h1 Editing item
+
+-form_for(@item, :url => { :action => :update }) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :attribution
+    = f.text_field :attribution
+  %p
+    = item_display(@item, :thumb)
+  %p
+    = f.submit "Update"
+= link_to 'Show public page', @item
+|
+= link_to 'Back', :action => :index

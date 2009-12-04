@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Constants::Countries</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Constants::Countries</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/constants_rb.html">
+                lib/constants.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ALL</td>
+          <td>=</td>
+          <td class="context-item-value">[      [&quot;Afghanistan&quot;, &quot;AF&quot;],      [&quot;Albania&quot;, &quot;AL&quot;],      [&quot;Algeria&quot;, &quot;DZ&quot;],      [&quot;American Samoa&quot;, &quot;AS&quot;],      [&quot;Andorra&quot;, &quot;AD&quot;],      [&quot;Angola&quot;, &quot;AO&quot;],      [&quot;Anguilla&quot;, &quot;AI&quot;],      [&quot;Antarctica&quot;, &quot;AQ&quot;],      [&quot;Antigua and Barbuda&quot;, &quot;AG&quot;],      [&quot;Argentina&quot;, &quot;AR&quot;],      [&quot;Armenia&quot;, &quot;AM&quot;],      [&quot;Aruba&quot;, &quot;AW&quot;],      [&quot;Australia&quot;, &quot;AU&quot;],      [&quot;Austria&quot;, &quot;AT&quot;],      [&quot;Azerbaijan&quot;, &quot;AZ&quot;],      [&quot;Bahamas&quot;, &quot;BS&quot;],      [&quot;Bahrain&quot;, &quot;BH&quot;],      [&quot;Bangladesh&quot;, &quot;BD&quot;],      [&quot;Barbados&quot;, &quot;BB&quot;],      [&quot;Belarus&quot;, &quot;BY&quot;],      [&quot;Belgium&quot;, &quot;BE&quot;],      [&quot;Belize&quot;, &quot;BZ&quot;],      [&quot;Benin&quot;, &quot;BJ&quot;],      [&quot;Bermuda&quot;, &quot;BM&quot;],      [&quot;Bhutan&quot;, &quot;BT&quot;],      [&quot;Bolivia&quot;, &quot;BO&quot;],      [&quot;Bosnia and Herzegovina&quot;, &quot;BA&quot;],      [&quot;Botswana&quot;, &quot;BW&quot;],      [&quot;Bouvet Island&quot;, &quot;BV&quot;],      [&quot;Brazil&quot;, &quot;BR&quot;],      [&quot;British Indian Ocean Territory&quot;, &quot;IO&quot;],      [&quot;Brunei Darussalam&quot;, &quot;BN&quot;],      [&quot;Bulgaria&quot;, &quot;BG&quot;],      [&quot;Burkina Faso&quot;, &quot;BF&quot;],      [&quot;Burundi&quot;, &quot;BI&quot;],      [&quot;Cambodia&quot;, &quot;KH&quot;],      [&quot;Cameroon&quot;, &quot;CM&quot;],      [&quot;Canada&quot;, &quot;CA&quot;],      [&quot;Cape Verde&quot;, &quot;CV&quot;],      [&quot;Cayman Islands&quot;, &quot;KY&quot;],      [&quot;Central African Republic&quot;, &quot;CF&quot;],      [&quot;Chad&quot;, &quot;TD&quot;],      [&quot;Chile&quot;, &quot;CL&quot;],      [&quot;China&quot;, &quot;CN&quot;],      [&quot;Christmas Island&quot;, &quot;CX&quot;],      [&quot;Cocos (Keeling) Islands&quot;, &quot;CC&quot;],      [&quot;Colombia&quot;, &quot;CO&quot;],      [&quot;Comoros&quot;, &quot;KM&quot;],      [&quot;Congo&quot;, &quot;CG&quot;],      [&quot;Cook Islands&quot;, &quot;CK&quot;],      [&quot;Costa Rica&quot;, &quot;CR&quot;],      [&quot;Cote D'Ivoire (Ivory Coast)&quot;, &quot;CI&quot;],      [&quot;Croatia (Hrvatska)&quot;, &quot;HR&quot;],      [&quot;Cuba&quot;, &quot;CU&quot;],      [&quot;Cyprus&quot;, &quot;CY&quot;],      [&quot;Czech Republic&quot;, &quot;CZ&quot;],      [&quot;Czechoslovakia (former)&quot;, &quot;CS&quot;],      [&quot;Denmark&quot;, &quot;DK&quot;],      [&quot;Djibouti&quot;, &quot;DJ&quot;],      [&quot;Dominica&quot;, &quot;DM&quot;],      [&quot;Dominican Republic&quot;, &quot;DO&quot;],      [&quot;East Timor&quot;, &quot;TP&quot;],      [&quot;Ecuador&quot;, &quot;EC&quot;],      [&quot;Egypt&quot;, &quot;EG&quot;],      [&quot;El Salvador&quot;, &quot;SV&quot;],      [&quot;Equatorial Guinea&quot;, &quot;GQ&quot;],      [&quot;Eritrea&quot;, &quot;ER&quot;],      [&quot;Estonia&quot;, &quot;EE&quot;],      [&quot;Ethiopia&quot;, &quot;ET&quot;],      [&quot;Falkland Islands (Malvinas)&quot;, &quot;FK&quot;],      [&quot;Faroe Islands&quot;, &quot;FO&quot;],      [&quot;Fiji&quot;, &quot;FJ&quot;],      [&quot;Finland&quot;, &quot;FI&quot;],      [&quot;France&quot;, &quot;FR&quot;],      [&quot;France, Metropolitan&quot;, &quot;FX&quot;],      [&quot;French Guiana&quot;, &quot;GF&quot;],      [&quot;French Polynesia&quot;, &quot;PF&quot;],      [&quot;French Southern Territories&quot;, &quot;TF&quot;],      [&quot;Gabon&quot;, &quot;GA&quot;],      [&quot;Gambia&quot;, &quot;GM&quot;],      [&quot;Georgia&quot;, &quot;GE&quot;],      [&quot;Germany&quot;, &quot;DE&quot;],      [&quot;Ghana&quot;, &quot;GH&quot;],      [&quot;Gibraltar&quot;, &quot;GI&quot;],      [&quot;Great Britain (UK)&quot;, &quot;GB&quot;],      [&quot;Greece&quot;, &quot;GR&quot;],      [&quot;Greenland&quot;, &quot;GL&quot;],      [&quot;Grenada&quot;, &quot;GD&quot;],      [&quot;Guadeloupe&quot;, &quot;GP&quot;],      [&quot;Guam&quot;, &quot;GU&quot;],      [&quot;Guatemala&quot;, &quot;GT&quot;],      [&quot;Guinea&quot;, &quot;GN&quot;],      [&quot;Guinea-Bissau&quot;, &quot;GW&quot;],      [&quot;Guyana&quot;, &quot;GY&quot;],      [&quot;Haiti&quot;, &quot;HT&quot;],      [&quot;Heard and McDonald Islands&quot;, &quot;HM&quot;],      [&quot;Honduras&quot;, &quot;HN&quot;],      [&quot;Hong Kong&quot;, &quot;HK&quot;],      [&quot;Hungary&quot;, &quot;HU&quot;],      [&quot;Iceland&quot;, &quot;IS&quot;],      [&quot;India&quot;, &quot;IN&quot;],      [&quot;Indonesia&quot;, &quot;ID&quot;],      [&quot;Iran&quot;, &quot;IR&quot;],      [&quot;Iraq&quot;, &quot;IQ&quot;],      [&quot;Ireland&quot;, &quot;IE&quot;],      [&quot;Israel&quot;, &quot;IL&quot;],      [&quot;Italy&quot;, &quot;IT&quot;],      [&quot;Jamaica&quot;, &quot;JM&quot;],      [&quot;Japan&quot;, &quot;JP&quot;],      [&quot;Jordan&quot;, &quot;JO&quot;],      [&quot;Kazakhstan&quot;, &quot;KZ&quot;],      [&quot;Kenya&quot;, &quot;KE&quot;],      [&quot;Kiribati&quot;, &quot;KI&quot;],      [&quot;Korea (North)&quot;, &quot;KP&quot;],      [&quot;Korea (South)&quot;, &quot;KR&quot;],      [&quot;Kuwait&quot;, &quot;KW&quot;],      [&quot;Kyrgyzstan&quot;, &quot;KG&quot;],      [&quot;Laos&quot;, &quot;LA&quot;],      [&quot;Latvia&quot;, &quot;LV&quot;],      [&quot;Lebanon&quot;, &quot;LB&quot;],      [&quot;Lesotho&quot;, &quot;LS&quot;],      [&quot;Liberia&quot;, &quot;LR&quot;],      [&quot;Libya&quot;, &quot;LY&quot;],      [&quot;Liechtenstein&quot;, &quot;LI&quot;],      [&quot;Lithuania&quot;, &quot;LT&quot;],      [&quot;Luxembourg&quot;, &quot;LU&quot;],      [&quot;Macau&quot;, &quot;MO&quot;],      [&quot;Macedonia&quot;, &quot;MK&quot;],      [&quot;Madagascar&quot;, &quot;MG&quot;],      [&quot;Malawi&quot;, &quot;MW&quot;],      [&quot;Malaysia&quot;, &quot;MY&quot;],      [&quot;Maldives&quot;, &quot;MV&quot;],      [&quot;Mali&quot;, &quot;ML&quot;],      [&quot;Malta&quot;, &quot;MT&quot;],      [&quot;Marshall Islands&quot;, &quot;MH&quot;],      [&quot;Martinique&quot;, &quot;MQ&quot;],      [&quot;Mauritania&quot;, &quot;MR&quot;],      [&quot;Mauritius&quot;, &quot;MU&quot;],      [&quot;Mayotte&quot;, &quot;YT&quot;],      [&quot;Mexico&quot;, &quot;MX&quot;],      [&quot;Micronesia&quot;, &quot;FM&quot;],      [&quot;Moldova&quot;, &quot;MD&quot;],      [&quot;Monaco&quot;, &quot;MC&quot;],      [&quot;Mongolia&quot;, &quot;MN&quot;],      [&quot;Montserrat&quot;, &quot;MS&quot;],      [&quot;Morocco&quot;, &quot;MA&quot;],      [&quot;Mozambique&quot;, &quot;MZ&quot;],      [&quot;Myanmar&quot;, &quot;MM&quot;],      [&quot;Namibia&quot;, &quot;NA&quot;],      [&quot;Nauru&quot;, &quot;NR&quot;],      [&quot;Nepal&quot;, &quot;NP&quot;],      [&quot;Netherlands&quot;, &quot;NL&quot;],      [&quot;Netherlands Antilles&quot;, &quot;AN&quot;],      [&quot;Neutral Zone&quot;, &quot;NT&quot;],      [&quot;New Caledonia&quot;, &quot;NC&quot;],      [&quot;New Zealand (Aotearoa)&quot;, &quot;NZ&quot;],      [&quot;Nicaragua&quot;, &quot;NI&quot;],      [&quot;Niger&quot;, &quot;NE&quot;],      [&quot;Nigeria&quot;, &quot;NG&quot;],      [&quot;Niue&quot;, &quot;NU&quot;],      [&quot;Norfolk Island&quot;, &quot;NF&quot;],      [&quot;Northern Mariana Islands&quot;, &quot;MP&quot;],      [&quot;Norway&quot;, &quot;NO&quot;],      [&quot;Oman&quot;, &quot;OM&quot;],      [&quot;Pakistan&quot;, &quot;PK&quot;],      [&quot;Palau&quot;, &quot;PW&quot;],      [&quot;Panama&quot;, &quot;PA&quot;],      [&quot;Papua New Guinea&quot;, &quot;PG&quot;],      [&quot;Paraguay&quot;, &quot;PY&quot;],      [&quot;Peru&quot;, &quot;PE&quot;],      [&quot;Philippines&quot;, &quot;PH&quot;],      [&quot;Pitcairn&quot;, &quot;PN&quot;],      [&quot;Poland&quot;, &quot;PL&quot;],      [&quot;Portugal&quot;, &quot;PT&quot;],      [&quot;Puerto Rico&quot;, &quot;PR&quot;],      [&quot;Qatar&quot;, &quot;QA&quot;],      [&quot;Reunion&quot;, &quot;RE&quot;],      [&quot;Romania&quot;, &quot;RO&quot;],      [&quot;Russian Federation&quot;, &quot;RU&quot;],      [&quot;Rwanda&quot;, &quot;RW&quot;],      [&quot;S. Georgia and S. Sandwich Isls.&quot;, &quot;GS&quot;],      [&quot;Saint Kitts and Nevis&quot;, &quot;KN&quot;],      [&quot;Saint Lucia&quot;, &quot;LC&quot;],      [&quot;Saint Vincent and the Grenadines&quot;, &quot;VC&quot;],      [&quot;Samoa&quot;, &quot;WS&quot;],      [&quot;San Marino&quot;, &quot;SM&quot;],      [&quot;Sao Tome and Principe&quot;, &quot;ST&quot;],      [&quot;Saudi Arabia&quot;, &quot;SA&quot;],      [&quot;Senegal&quot;, &quot;SN&quot;],      [&quot;Seychelles&quot;, &quot;SC&quot;],      [&quot;Sierra Leone&quot;, &quot;SL&quot;],      [&quot;Singapore&quot;, &quot;SG&quot;],      [&quot;Slovak Republic&quot;, &quot;SK&quot;],      [&quot;Slovenia&quot;, &quot;SI&quot;],      [&quot;Solomon Islands&quot;, &quot;Sb&quot;],      [&quot;Somalia&quot;, &quot;SO&quot;],      [&quot;South Africa&quot;, &quot;ZA&quot;],      [&quot;Spain&quot;, &quot;ES&quot;],      [&quot;Sri Lanka&quot;, &quot;LK&quot;],      [&quot;St. Helena&quot;, &quot;SH&quot;],      [&quot;St. Pierre and Miquelon&quot;, &quot;PM&quot;],      [&quot;Sudan&quot;, &quot;SD&quot;],      [&quot;Suriname&quot;, &quot;SR&quot;],      [&quot;Svalbard and Jan Mayen Islands&quot;, &quot;SJ&quot;],      [&quot;Swaziland&quot;, &quot;SZ&quot;],      [&quot;Sweden&quot;, &quot;SE&quot;],      [&quot;Switzerland&quot;, &quot;CH&quot;],      [&quot;Syria&quot;, &quot;SY&quot;],      [&quot;Chinese Taipei&quot;, &quot;TW&quot;],      [&quot;Tajikistan&quot;, &quot;TJ&quot;],      [&quot;Tanzania&quot;, &quot;TZ&quot;],      [&quot;Thailand&quot;, &quot;TH&quot;],      [&quot;Togo&quot;, &quot;TG&quot;],      [&quot;Tokelau&quot;, &quot;TK&quot;],      [&quot;Tonga&quot;, &quot;TO&quot;],      [&quot;Trinidad and Tobago&quot;, &quot;TT&quot;],      [&quot;Tunisia&quot;, &quot;TN&quot;],      [&quot;Turkey&quot;, &quot;TR&quot;],      [&quot;Turkmenistan&quot;, &quot;TM&quot;],      [&quot;Turks and Caicos Islands&quot;, &quot;TC&quot;],      [&quot;Tuvalu&quot;, &quot;TV&quot;],      [&quot;US Minor Outlying Islands&quot;, &quot;UM&quot;],      [&quot;USSR (former)&quot;, &quot;SU&quot;],      [&quot;Uganda&quot;, &quot;UG&quot;],      [&quot;Ukraine&quot;, &quot;UA&quot;],      [&quot;United Arab Emirates&quot;, &quot;AE&quot;],      [&quot;United Kingdom&quot;, &quot;UK&quot;],      [&quot;United States&quot;, &quot;US&quot;],      [&quot;Uruguay&quot;, &quot;UY&quot;],      [&quot;Uzbekistan&quot;, &quot;UZ&quot;],      [&quot;Vanuatu&quot;, &quot;VU&quot;],      [&quot;Vatican City State (Holy See)&quot;, &quot;VA&quot;],      [&quot;Venezuela&quot;, &quot;VE&quot;],      [&quot;Viet Nam&quot;, &quot;VN&quot;],      [&quot;Virgin Islands (British)&quot;, &quot;VG&quot;],      [&quot;Virgin Islands (U.S.)&quot;, &quot;VI&quot;],      [&quot;Wallis and Futuna Islands&quot;, &quot;WF&quot;],      [&quot;Western Sahara&quot;, &quot;EH&quot;],      [&quot;Yemen&quot;, &quot;YE&quot;],      [&quot;Yugoslavia&quot;, &quot;YU&quot;],      [&quot;Zaire&quot;, &quot;ZR&quot;],      [&quot;Zambia&quot;, &quot;ZM&quot;],      [&quot;Zimbabwe&quot;, &quot;ZW&quot;]]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CODES</td>
+          <td>=</td>
+          <td class="context-item-value">['CN', 'JP', 'US']</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">QUESTION</td>
+          <td>=</td>
+          <td class="context-item-value">[       [&quot;China&quot;, &quot;CN&quot;],       [&quot;Japan&quot;, &quot;JP&quot;],       [&quot;United States&quot;, &quot;US&quot;]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PRIORITY</td>
+          <td>=</td>
+          <td class="context-item-value">[       [&quot;China&quot;, &quot;CN&quot;],       [&quot;Chinese Taipei&quot;, &quot;TW&quot;],       [&quot;Hong Kong&quot;, &quot;HK&quot;],       [&quot;Japan&quot;, &quot;JP&quot;],       [&quot;Macau&quot;, &quot;MO&quot;],       [&quot;United States&quot;, &quot;US&quot;]</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

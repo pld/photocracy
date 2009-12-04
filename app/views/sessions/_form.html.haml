@@ -1,0 +1,25 @@
+-form_tag session_path do
+  %table.form
+    %tr
+      %td== #{t('form.email').downcase}:
+      %td= text_field_tag 'email', @email
+    %tr
+      %td== #{t('form.password').downcase}:
+      %td= password_field_tag 'password', nil
+
+    %tr
+      %td
+      %td
+        = check_box_tag 'remember_me', '1', @remember_me
+        = label_tag 'remember_me', t('form.remember')
+    -if @controller.login_attempts >= Constants::Login::MAX_LOGIN_ATTEMPTS
+      %tr
+        %td{:colspan => 2, :class => 'button'}
+          = javascript_tag "var RecaptchaOptions = { theme : 'clean' };"
+          = get_captcha
+    %tr
+      %td
+      %td.button
+        = submit_tag t('sessions.submit'), :class => 'submit'
+        = t('actions.or')
+        %strong= link_to("#{t('users.signup_for')}", signup_path)

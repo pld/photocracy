@@ -1,0 +1,12 @@
+%h1= @header
+%p.block
+  -form_for(@profile) do |f|
+    = f.error_messages
+    %table.session
+      = render :partial => '/profiles/form', :locals => { :f => f, :sel_options => @sel_options }
+      %tr
+        %td
+        %td
+          = f.submit t('form.cancel'), :class => 'submit', :onclick => "window.location='#{url_for(:action => 'show')}';return false;"
+          = f.submit t('form.update'), :class => 'submit'
+= javascript_tag("Google.conversion('55dXCJC3hAEQxNKW9gM');") unless @user.nil?

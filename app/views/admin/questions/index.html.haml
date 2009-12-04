@@ -1,0 +1,16 @@
+%h1 Listing Questions
+
+%table
+  %tr
+    %th Name
+    %th Groups
+    %th Actions
+  -for question in @questions
+    %tr
+      %td=h question.name
+      %td=h question.groups.map { |g| g.name }
+      %td
+        = link_to 'Show', admin_question_path(question)
+        = link_to 'Edit', edit_admin_question_path(question)
+        = link_to 'Destroy', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete
+= link_to 'New question', new_admin_question_path

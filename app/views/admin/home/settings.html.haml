@@ -1,0 +1,48 @@
+%h2 Parameter Settings
+%ul
+  %li
+    = link_to('toggle', :action => :settings, :id => :item)
+    == Guests can view individual items: #{!Param.login_required?(:item)} 
+  %li
+    = link_to('toggle', :action => :settings, :id => :items)
+    == Guests can view items list: #{!Param.login_required?(:items)} 
+  %li
+    = link_to('toggle', :action => :settings, :id => :recent)
+    == Guests can view recent winners: #{!Param.login_required?(:recent)} 
+  %li
+    = link_to('toggle', :action => :settings, :id => Constants::Params::NO_MODERATE_COMMENTS)
+    == Do not moderate comments: #{Param.boolean(Constants::Params::NO_MODERATE_COMMENTS)}
+  %li
+    = link_to('toggle', :action => :settings, :id => Constants::Params::RANDOM_FIRST_QUESTION)
+    == First question is random: #{Param.random_first_question? || "false, first question is based on locale"}
+  %li
+    = link_to('toggle', :action => :settings, :id => Constants::Params::FLAG_QUESTION_IMAGE)
+    == Show flags for questions: #{Param.flag_question_image?}
+  %li
+    -value = Param.refresh_question_after
+    == Refresh question after #{pluralize(value, 'prompt')}
+    = render :partial => 'change', :locals => { :lid => 'refresh_count', :id => Constants::Params::REFRESH_QUESTION_AFTER, :value => value }
+  %li
+    -value = Param.english_vary_percent
+    == #{value}% chance of using English question text variation
+    = render :partial => 'change', :locals => { :lid => 'english_vary_percent', :id => Constants::Params::ENGLISH_VARY_PERCENT, :value => value }
+  %li
+    -value = Param.random_new_question_percent
+    == #{value}% chance of a random question (#{100 - value}% chance of a question for locale)
+    = render :partial => 'change', :locals => { :lid => 'question_percent', :id => Constants::Params::RANDOM_NEW_QUESTION_PERCENT, :value => value }
+  %li
+    -value = Param.value_named(Constants::Prompts::PRIME_FOR, Constants::Prompts::Default::PRIME_FOR)
+    == Prime for the first #{pluralize(value, 'prompt')}.
+    = render :partial => 'change', :locals => { :lid => 'prime_for', :id => Constants::Prompts::PRIME_FOR, :value => value }
+  %li
+    -value = Param.value_named(Constants::Prompts::PRIME_TOP, Constants::Prompts::Default::PRIME_TOP)
+    == Prime with a question in the top #{value} highest ranked.
+    = render :partial => 'change', :locals => { :lid => 'prime_top', :id => Constants::Prompts::PRIME_TOP, :value => value }
+  %li
+    -value = Param.item_flags_for_suspend
+    == Remove items after #{pluralize(value, 'flag')} from different users
+    = render :partial => 'change', :locals => { :lid => 'item_flags', :id => Constants::Params::ITEM_FLAGS_FOR_SUSPEND, :value => value }
+  %li
+    -value = Param.comment_flags_for_suspend
+    == Remove comments after #{pluralize(value, 'flag')} from different users
+    = render :partial => 'change', :locals => { :lid => 'comment_flags', :id => Constants::Params::COMMENT_FLAGS_FOR_SUSPEND, :value => value, :text => "" }

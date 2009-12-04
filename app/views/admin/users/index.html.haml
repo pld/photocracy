@@ -1,0 +1,10 @@
+%table
+  %tr
+    %th Created
+    %th Name
+    %th Email
+    %th State
+    %th Actions
+  %tbody#users
+    = render :partial => 'user', :collection => @users
+= will_paginate @users, :id => :paginate

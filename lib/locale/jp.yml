@@ -1,0 +1,373 @@
+jp:
+  nav:
+    about: フォトクラシーについて
+    add: 写真を加える
+    feedback: フィードバックを書けます
+    language: 言語
+    recent: 最近の優勝者
+    send: 友達（友人）に送る
+    share: 共有する
+    stats: 統計
+    view: 写真を見る
+    vote: 投票（する）
+    privacy: プライバシー　ポリシー
+  datetime:
+    distance_in_words:
+      x_minute: 1分前
+      x_minutes: 〜分前
+      x_hour: 時間前
+      x_hours: 〜時間前
+      x_day: 1日前
+      x_days: 〜日前
+      x_month: 1月前
+      x_months: 〜月前
+      x_year: 1年前
+      x_years: 〜年前
+      about_x_minute: およそ1分前
+      about_x_minutes: およそ〜分前
+      about_x_hour: およそ1時間前
+      about_x_hours: およそ〜時間前
+      about_x_day: およそ1日前
+      about_x_days: およそ〜日前
+      about_x_month: およそ1月前
+      about_x_months: およそ〜月前
+      about_x_year: およそ1年前
+      about_x_years: およそ〜年前
+  activerecord:
+    attributes:
+       user:
+         email: Eメール
+         password: パスワード
+         password_confirmation: パスワードを確認して下さい
+       mailing:
+         message: メッセージ
+         name: 名前
+         email: Eメール
+       flag:
+         flag_type_id: 型
+    errors:
+      template:
+        header: エラーにより、この項目は保存されませんでした。
+        body: "以下の欄に問題があります。"
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: 空白ではいけません。
+              too_short: 短かすぎます。（最低６文字でなくてはなりません。）
+            password:
+              blank: 空白ではいけません。
+              too_short:  短かすぎます。（最低６文字でなくてはなりません。）
+            email:
+              blank: 空白ではいけません。
+              too_short:  短かすぎます。（最低６文字でなくてはなりません。）
+              invalid: 無効です。Eメールアドレスのように入力して下さい。
+            login:
+              too_short: 短かすぎます。（最低３文字でなくてはなりません。）
+              invalid: "<br/>無効です。アルファベット、数字、ピリオド、ハイフン、アンダーバー、＠のみを使用して下さい。"
+        mailing:
+          attributes:
+            name:
+              blank: 空白ではいけません。
+            message:
+              blank: 空白ではいけません。
+            email:
+              blank: 空白ではいけません。
+              too_short:  短かすぎます。（最低６文字でなくてはなりません。）
+              invalid: 無効です。Eメールアドレスのように入力して下さい。
+        flag:
+          attributes:
+            flag_type_id:
+              blank: 空白ではいけません。
+        comment:
+          attributes:
+            content:
+              blank: 空白ではいけません。コメントを以下に入力して下さい。
+  actions: 
+    edit: 編集
+    whatsthis: 何（ですか）？
+    or: または
+    loading: 読み込み中です。
+    please: どうぞ
+    back_to_voting: 投票に戻ります。
+    click: 選択をクリック！
+  errors:
+    e5xx: 申し訳ないですがちょっと問題が起りました。<br/>この問題について知らせが届いたので今調査中です。
+    e404: 表示出来ません。　
+    restricted: この情報をアックセスするにはPhotocracyの アカウントが必要です。
+    logout: ログインしています
+  time:
+    ago: 前
+    added: 追加されました
+  share:
+    h: 友達にこのサイトを共有する
+    name: 友達の名前
+    email: 友達のeメール
+  stats:
+    h: 統計
+    votes: 投票数
+    vote: 投票する
+    votes_on: 写真に
+  feedback:
+    h: Feedback
+    success: Thank you for submitting your feedback.  Enjoy using Photocracy!
+    name: Your name
+    email: Your Eメール
+    type: Type of feedback
+    types: comment on site, more information, collaboration, researcher inquiry, student inquiry, site error, other
+  comment:
+    flag:
+      success: コメントにフラグが追加されました
+    add: コメントを入力してください
+    comment: コメント
+    success: コメントが提出されました
+    user: ユーザー
+    time: 時間
+    login: コメントを書くには、ログインしている必要があります。
+    posted: 掲示されました
+    says: 〜さんは言いました
+  flag:
+    comment: コメント
+    h: 適当でないことを指します
+    type: 型
+    copyright: コピーライト（著作権）の侵害
+    offensive: 不快な内容
+    other: その他
+    success: オブジェクトにフラッグが追加されました
+  form:
+    all_countries: 全ての国
+    attribution: 撮影者
+    cancel: キャンセル
+    create: 作成する
+    email: Eメール
+    login: ログイン
+    user_name: 名前
+    message: メッセージ
+    name: 名前
+    password: パスワード
+    password_confirm: パスワードを確認して下さい
+    remember: 記憶しておく
+    select: 選択
+    submit: 提出
+    signup: サインアップ
+    update: アップデート
+    photo: 写真
+    description: 説明
+    tags: Tags
+    how_you_appear: これが、あなたが他の人にどのように見えているかです
+    choose_user_name: ユーザー名は、他の人に見える名前です。<br/>ユーザー名を下から選んで下さい
+    please_enter_the: 表示されるテキス トを入力して下さい。
+    displayed_text: テキスト／表示されるテキスト
+  item:
+    inactive: inactive
+    taken_by: が取った写真
+    not_approved: まだ認められていません。
+    flag:
+      success: 項目にフラッグが追加されました
+    send:
+      h: この項目を友達に送る
+      name: 名前
+      email: Eメール
+      message: メッセージ
+      success: この項目はEメールで送信されました
+    submit:
+      fail:
+        h: 写真を追加する
+        upload: アップロードの失敗または、フォトタイプが違います。
+        flickr: Flickr IDは見つかりませんでした
+        url: URLが無効であるか、または写真のフォーマットが無効です
+      h: 写真を追加する
+      agree:
+        have_rights: 著作権は私にあります。この写真を〜に置きたいです
+        is_in_cc: この写真は既に〜にあります
+        fail: 失敗しました。写真をアップロードするためには、下記の事項に同意する必要があります。
+      name: 名前
+      question: 問題
+      recently: 最新の写真
+      p_1: フォトクラシーは、ユーザーが撮った写真をアップロードすることができ、写っている国々に関する個人的な見方を写真を通じて紹介することが出来るものです。中国・日本・アメリカを象徴するあなたが撮った写真があれば、自由にアップロードして下さい。また、クリエイティブ・コモン・ライセンスのもとで配布されているものを含め、著作権の所在が不確かなものについては、フォトクラシーまでご連絡ください。
+      p_2: 写真があるURLを追加するか、写真をアップロードすることで、フォトクラシーに貢献出来ます。オプショナルで、写真に説明をつけることもできます。
+      agree_and_contact: 写真をアップロードするためには、コモン・ライセンスのため、下のボックスにチェックする必要があります。質問があれば、Eメールにてお問い合わせ下さい。
+      upload: アップロード
+      flickr: Flickr（フリッカー）
+      url: URL
+      flickr_id: Flickr ID
+      type: アップロードタイプ
+      instructions:
+        upload: コンピュータから写真を選択して、アップロードする
+        flickr: Flickr IDを入力して下さい
+        url: 画像があるURLを入力して下さい
+    comments: コメント
+    create: 送信されました。レビュー待ちです。
+    details: 写真の詳細
+    list: 項目のリスト
+    name: 名前
+    ratings: レーティング
+    show: 詳細
+    user: ユーザー
+    date: 日付
+  items:
+    h: 写真
+    versus: のほうが
+    not_enough_votes: Not enough votes
+    which_best: どれが良いですか：どちらの写真がより〜を表していますか。
+    according_to: 〜の人によると
+    anonymous: 匿名
+    yours: あなたがアップロードした写真
+    votes_from_country: （X国）からの投票
+    for: （〜の）ために
+    users_country: ユーザーの出身国
+    image: イメージ
+    order_by: 順番
+    question: 質問
+    order:
+      date: 日付
+      percent: 勝つ確率
+      rank: ランク
+      score: スコア
+    photo: 写真
+    photos: 票
+    sort: 順序
+  mailing:
+    failure: An error occured and your message could not be sent.
+    success: メッセージが送信されました
+    item:
+      link: クリックして下さい
+      subject: Xがあなたに写真を送りました
+    hello: Hello
+    photo: photo
+    reset:
+      h: Your password has been reset.
+      explain: Visit this URL to reset your password
+    share:
+      h: just shared Photocracy with you!
+      body: Photocracy uses pair-wise comparisons, to measure cross-cultural and cross-national perceptions, particularly in China, Japan, and the US via the web. The ultimate aim is to understand what symbols are representative of a given country and how these perceptions differ by country.
+  profile:
+    h: プロフィール　
+    age: 年齢
+    country: 今はどこの国に住んでいますか？
+    sex: 性別
+    birth_year: 出 生年？
+    country_question: どこの国に住んでいますか
+    create: プロフィールを作成
+    edit: プロフィールを編集
+    education: 最終学歴
+    edu_options:
+      none: なし
+      middle: 中学校
+      high: 高等学校
+      college: 大学
+      grad: 大学院
+    gender: 性 別？
+    gen_options:
+      man: 男性
+      woman: 女性
+      other: その他
+    language: 母国語は何ですか
+    lan_options:
+      chinese_s: 中国語（略体）
+      chinese_t: 中国語
+      chinese_sh: 中国語（上海）
+      chinese_ct: 中国語（広東）
+      japanese: 日本語
+      english: 英語
+      other: その他
+    last: アップロード（更新）
+    location: このサイトをどこで見ていますか
+    loc_options:
+      work: 仕事場
+      home: 家
+      school: 学校
+      other: その他
+    add_languages: 外国語を話しますか。話せる場合は、どのレベルですか
+    abroad: 出身国以外の国の人と接したことがありますか。ある場合は、どのような形ですか
+    abroad_options:
+      none: なし
+      little: すこし
+      medium: たまに
+      large: 頻繁に
+    birth_country: 出身国はどこですか
+    profession: お仕事はなんですか
+    missing: プロフィールを作成して下さい
+    new: 新しいプロフィール
+    show: 表示
+    success: プロフィールができました
+  response:
+    these_won: ''
+    of_the_time: 勝率
+    add_stats: その他の統計
+    all_votes: 全投票数
+    by_country: 国別
+    previous: 前の写真
+    question: 質問
+    recent: 最新の写真
+    skip: スキップ
+    slow: ゆっくりお願いします。
+    votes: 投票
+    list:
+      skipped: スキップされました。
+      over: 終了
+  sessions:
+    fail: ?X（Xとして）ログインできませんでした
+    h: 新しいユーザーに登録
+    logout: ログアウトしました
+    submit: ログイン
+    success: ログインしました
+    captcha_error: CAPTCHAにもう一度テキストを送信して下さい。
+  users:
+    tag_lines: 登録したあと、以下のことが出来ます
+    captcha_error: CAPTCHAにもう一度テキストを送信して下さい。
+    activate:
+      success: サインインして下さい
+      fail_missing: コードが間違っています。EメールにあるURLにしたがってください
+      fail_code: ユーザーの名前とコードが一致しません。Eメールを確認しましたか。アクティベーションは済んでいるのかもしれません。サインインしてみて下さい
+    create: アカウントを作成する
+    error: アカウントの作成に失敗しました。もう一度やり直して下さい
+    in: （Xとして）ログインしています
+    login: ログイン
+    logout: ログアウト
+    out: ログインしていません
+    signup: サインアップ（登録）
+    signup_for: Photocracyに登録します
+    reasons:
+      upload: 写真をアップロドする
+      track: 投票履歴を見る
+      view: 結果を見る
+      comment: コメントする
+    success: ご登録ありがとうございます。あなたのEメールにアクティベーションに必要な暗号（コード）を送信しました
+    welcome: ようこそ
+    you_have_rated: 今回の訪問に、あなたは
+    this_makes: あなたもこれでフォトクラシーです
+    most: 最
+    influential_rater: 有力投票者
+    vote: 票を
+    this_visit: しました
+    logged_out_welcome: もう登録していますか？ログインして下さい。アカウントがないならサインアップしてください!
+    photos_added: あなたは登録（追加・加入）されました
+    have_received: X以上を獲得しました
+    has_received: X以上を獲得しました
+    h: 新規登録をしてください
+    for: 〜のために
+  about:
+    h: フォトクラシーについて
+    paragraph_1: このユーザーは、ウェブ上で、特に中国、日本、アメリカの文化を国を越えて比較するために、ペアリングする方法をとりました。目標にされたのは、それぞれの国でどのようなシンボルが使われているか、またシンボルがどのように違うかという点です。
+    see_results: see the results
+    paragraph_2a: ウェブサイトは、ユーザーに２つの写真を見せ、次の質問をします。「どちらの写真が、それぞれの国らしいものですか。」　ユーザーがどちらかの写真を選択すると、さらにまた２つの写真が表示されます。これを繰り返すことにより、どのような理由にしろ、「もっともその国らしい」写真が選ばれていくことになります。したがって、たくさんのユーザーが参加すればするほど、結果の信頼性が高まります。フォトクラシーのリンクをより多くの人に転送して下さい。
+    upload_it: upload it
+    paragraph_2b: .  We've even made it easy for you to
+    from_flickr: upload photos directly from Flickr
+    paragraph_3a: このウェブサイトのデータは、プライバシー・ポリシーに基づいて集められています。データの保有者は常に匿名として扱われ、プリンストン大学の学士論文の資料として使われます。
+    upload_some: upload some photos
+    paragraph_3b: このウェブサイトの運用と目的へのご理解に感謝します。ご質問等は、下のフォームにて送信して下さい。
+    our_feedback_form: our feedback form
+    email: email
+    salutation: Sincerely,
+    matt:
+      title: 社会学　助教
+    josh:
+      title: プリンストン大学２００９年卒業生
+    right_h: 作成者と連絡先
+    technical: ウェブサイトの問題等については、管理者までご連絡下さい
+    contact: ウェブサイトに関する質問は、～に連絡して（メールでご質問）下さい。
+  privacy:
+    h: プライバシー　ポリシー
+    contact: 連絡先

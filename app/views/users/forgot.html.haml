@@ -1,0 +1,12 @@
+%h1= t('users.forgot.h')
+.block
+  %p= t('users.forgot.explain')
+  -form_tag forgot_path  do
+    %table
+      %tr
+        %td= t('form.email')
+        %td= text_field_tag :email
+      %tr
+        %td
+        %td.button= submit_tag(t('form.submit'), :class => 'submit')
+  

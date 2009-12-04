@@ -1,0 +1,5 @@
+.question{:id => num}
+  = label_tag t("item.submit.question")
+  = select "question", "id#{num}", Question.find(:all).collect { |q| [ q.name, q.question_id_ext ] }, :include_blank => true
+  -if num.to_i > 1
+    = link_to_function 'remove', "$('##{num}').empty()"

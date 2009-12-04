@@ -1,0 +1,17 @@
+%tr.first
+  %td= @item_data[question_id][item][:rank]
+  %td.item{:rowspan => 2}
+    .inner= fast_link_to_item(@item_data[question_id][item][:image], item, 250)
+  %td.wide= t('items.order.percent')
+  %td= t('item.details')
+%tr
+  %td
+  %td.country-stats
+    %strong== #{@item_data[question_id][item][:percent].round}%
+    == &nbsp;&nbsp;(<strong>#{@item_data[question_id][item][:wins]}</strong> out of <strong>#{@item_data[question_id][item][:ratings]}</strong>)
+  %td
+    = t('item.taken_by')
+    %strong= @item_data[question_id][item][:attr]
+-if item == @item_ids[question_id].last
+  %tr
+    %td.pagination{:colspan => 5}= will_paginate(@item_ids[question_id], :separator => ' - ', :previous_label => '&laquo;', :next_label => '&raquo;', :id => "paginate_#{question_id}", :params => { :id => question_id }) || "<div id=\"paginate_#{question_id}\"></div>"

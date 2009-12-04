@@ -1,0 +1,5 @@
+%tr{:id => "flags_#{obj.id}", :style => "display:none"}
+  %td{:colspan => "5"}
+    %h3= "Flags for #{obj.respond_to?(:name) ? obj.name : type}"
+    = render :partial => 'admin/shared/flag', :locals => { :obj => obj, :type => type }, :collection => obj.flags
+    = link_to_function 'hide flags', "$('#flags_#{obj.id}').hide();$('#flag_link_#{obj.id}').html('show flags')"

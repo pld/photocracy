@@ -1,0 +1,62 @@
+%blockquote
+  %h1
+    %em= link_to("<< #{t('actions.back_to_voting')}", response_path(0))
+.split.block
+  .left
+    %p
+      %table
+        %tr
+          %td
+            = rounded(item_display(@item))
+  .right
+    %p
+      %strong== #{t('form.attribution')}:
+      = attribution(@item)
+    #comments_area
+      #comment_errors
+      -remote_form_for :comment, :url => { :action => 'comment' } do |f|
+        -if !@logged_in
+          %h2
+            %em= link_to("#{t('form.signup')} #{t('users.for')} Photocracy!", signup_path)
+        -elsif @current_user.login.nil? || @current_user.login.empty?
+          #login
+            %p
+              %em= t('form.choose_user_name')
+            %p
+              = label_tag "#{t('form.user_name')}:"
+              = text_field :user, :login
+        -else
+          %p
+            %em
+              == #{t('form.how_you_appear')}:
+              %strong= @current_user.login
+        %h3= f.label :content, t('comment.add')
+        = f.text_area :content, :size => '50x6'
+        = f.hidden_field :item_id, :value => @item.id
+        %p= submit_tag t('form.submit'), :class => 'submit'
+      %h3= link_to_function t('item.send.h'), "$('#mailing').toggle()"
+      = render :partial => 'share'
+    %h3= flag_link(@item)
+    = render :partial => 'shared/flag', :locals => { :obj => @item }
+-if @admin_user
+  #tags= render :partial => 'tags'
+  %h1 Plots
+  .block
+  -for question in @item.questions
+    %p= google_item_chart(@item, question)
+    %h1 Map (green vote for, red vote against)
+    .block
+    = javascript_include_tag "http://maps.google.com/maps?file=api&v=2&key=#{GOOGLE_MAPS_API_KEY}&sensor=false"
+    #world_map{:style => "width: 500px; height: 300px"}
+    %br
+    #asia_map{:style => "width: 500px; height: 300px"}
+    %br
+    #us_map{:style => "width: 500px; height: 300px"}
+    = google_map_votes(@item, question.id)
+-comments = @item.comments.ordered_active
+%h2
+  = t('item.comments')
+  == (<span id="comments_count">#{comments.length}</span>)
+.comments#comments
+  = render :partial => 'comment', :collection => comments
+  

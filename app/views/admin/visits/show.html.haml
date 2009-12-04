@@ -1,0 +1,59 @@
+%table
+  %tr
+    %td User
+    %td= @visit.user.nil? ? '(none)' : link_to(@visit.user.email, admin_user_path(@visit.user))
+  %tr
+    %td Last prompt
+    %td=h @visit.prompt_id
+  %tr
+    %td Locale
+    %td=h @visit.locale
+  %tr
+    %td IP address hash
+    %td=h @visit.ip_address
+  %tr
+    %td City
+    %td=h @visit.ip_city
+  %tr
+    %td Latitude
+    %td=h @visit.ip_latitude
+  %tr
+    %td Longitude
+    %td=h @visit.ip_longitude
+  %tr
+    %td Country code
+    %td=h @visit.ip_country_code
+  %tr
+    %td Country name
+    %td=h @visit.ip_country_name
+  %tr
+    %td DMA code
+    %td=h @visit.ip_dma_code
+  %tr
+    %td Area code
+    %td=h @visit.ip_area_code
+  %tr
+    %td Region
+    %td=h @visit.ip_region
+  %tr
+    %td Host
+    %td=h @visit.host
+  %tr
+    %td User agent
+    %td=h @visit.user_agent
+  %tr
+    %td Request Uri
+    %td=h @visit.request_uri
+  %tr
+    %td Referrer
+    %td=h @visit.referrer
+  %tr
+    %td Updated at
+    %td=h @visit.updated_at.to_s(:long)
+  %tr
+    %td Create at
+    %td=h @visit.created_at.to_s(:long)
+
+
+
+= link_to 'Back', admin_visits_path

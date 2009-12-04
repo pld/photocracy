@@ -1,0 +1,18 @@
+%div{:id => "#{type}_#{obj.id}_flag_#{flag.id}"}
+  -if flag.active
+    %table
+      %tr
+        %th Flagged By
+        %th From Country
+        %th Type
+        %th Comment
+        %th Created At
+      %tr
+        %td= flag.visit.user ? link_to(flag.visit.user.email, admin_user_path(flag.visit.user.id)) : link_to(flag.visit.ip_address, admin_visit_path(flag.visit.id))
+        %td= flag.visit.ip_country_name || 'Unknown'
+        %td= flag.flag_type.name
+        %td= flag.content
+        %td= flag.created_at
+    = link_to_remote "mark as resolved", :url => { :action => 'resolve_flag', :id => flag.id, :"#{type}_id" => obj.id }
+  -else
+    = "Resolved: #{flag.updated_at}"

@@ -1,0 +1,52 @@
+-form_for(@item || Item.new, :action => 'create', :html => { :multipart => true, :class => 'block' }) do |f|
+  = f.error_messages
+  %table.upload
+    %tr
+      %td
+        %strong= t('item.submit.type')
+      %td.options= upload_links(@item_type)
+    %tr
+      %td.instructions{:colspan => 2}
+        %p#instructions= type_instructions(@item_type)
+    %tr{:class => 'file-types', :id => 'upload', :style => type_style('upload')}
+      %td
+        %strong= t('form.photo')
+      %td= file_field :attachment, :uploaded_data, :size => 35
+    %tr{:class => 'file-types', :id => 'flickr', :style => type_style('flickr')}
+      %td
+        %strong= t('item.submit.flickr_id')
+      %td= text_field_tag :flickr_id, nil, :size => 35
+    %tr{:class => 'file-types', :id => 'url', :style => type_style('url')}
+      %td
+        %strong= t('item.submit.url')
+      %td= text_field_tag :url, nil, :size => 35
+    %tr
+      %td
+        %strong= t('form.tags')
+      %td= f.text_field :tags, field_options
+    %tr
+      %td
+        %strong= t('form.attribution')
+      %td= f.text_field :attribution, field_options
+    %tr#agree-error{:style => 'display:none'}
+      %td{:colspan => 2, :style => 'width:auto'}
+        %div.agree-error.error= t('item.submit.agree.fail')
+    %tr
+      %td#agree= f.check_box :agree
+      %td.agree
+        = t('item.submit.agree.have_rights')
+        = link_to('Creative Commons', 'http://creativecommons.org/', :target => 'new')
+        %br
+        = t('item.submit.agree.is_in_cc')
+        = link_to('Creative Commons', 'http://creativecommons.org/', :target => 'new')
+    -if @item
+      %tr
+        %td
+          %strong= t("item.submit.question")
+        %td= select "question", "id", questions_for_select('question_id_ext'), :selected => (@question)
+    -else
+      = hidden_field "question", "id", :value => @question.question_id_ext
+    %tr
+      %td{:colspan => 2}
+        = hidden_field_tag 'item_type', @item_type || 'upload'
+        = f.submit t('form.submit'), :class => 'submit', :onclick => 'return Item.submit()'

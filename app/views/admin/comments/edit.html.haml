@@ -1,0 +1,22 @@
+%h1 Editing comment
+
+-form_for(@comment, :url => admin_comment_path(@comment)) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :item_id
+    = f.text_field :item_id
+  %p
+    = f.label :visit_id
+    = f.text_field :visit_id
+  %p
+    = f.label :content
+    = f.text_area :content
+  %p
+    = f.label :active
+    = f.check_box :active
+  %p
+    = f.submit "Update"
+= link_to 'Show', admin_comment_path(@comment)
+|
+= link_to 'Back', admin_comments_path

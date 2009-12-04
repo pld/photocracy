@@ -1,0 +1,16 @@
+%h1 Listing groups
+
+%table
+  %tr
+    %th Name
+    %th Code
+    %th Actions
+  -for group in @groups
+    %tr
+      %td=h group.name
+      %td=h group.code
+      %td
+        = link_to 'Show', admin_group_path(group)
+        = link_to 'Edit', edit_admin_group_path(group)
+        = link_to 'Destroy', admin_group_path(group), :confirm => 'Are you sure?', :method => :delete
+= link_to 'New group', new_admin_group_path

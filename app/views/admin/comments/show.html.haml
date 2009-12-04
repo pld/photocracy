@@ -1,0 +1,15 @@
+%p
+  %strong Item:
+  =h @comment.item_id
+%p
+  %strong Visit:
+  =h @comment.visit_id
+%p
+  %strong Content:
+  =h @comment.content
+%p
+  %strong Active:
+  =h @comment.active
+= link_to 'Edit', edit_admin_comment_path(@comment)
+|
+= link_to 'Back', admin_comments_path

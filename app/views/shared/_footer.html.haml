@@ -1,0 +1,6 @@
+.footer
+  %p= link_to(t('nav.privacy'), privacy_path)
+  %p= link_to(t('nav.feedback'), feedback_path)
+  -if @admin_user
+    %p= render :partial => 'shared/admin_bar'
+  

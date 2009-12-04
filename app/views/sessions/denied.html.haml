@@ -1,0 +1,19 @@
+%table.denied
+  %tr
+    %td.left
+      %h1== #{t('users.signup_for')}!
+      .block
+      %table
+        %tr
+          %td
+            = render :partial => 'shared/taglines'
+            %center
+              %h4
+                %strong= link_to("#{t('users.signup_for')}!", signup_path)
+    %td.center
+      %h1= t('sessions.h')
+      .block
+        %p= render :partial => 'sessions/form'
+    %td.right
+      %h1= t('actions.back_to_voting')
+      .block= render(:partial => 'shared/back')

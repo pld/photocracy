@@ -1,0 +1,27 @@
+.left
+  %h1== #{t('profile.h')} (#{link_to(t('actions.edit'), edit_profile_path(@profile))})
+  %table
+    %tr
+      %td= t('profile.country')
+      %td= country_from_code(@profile.country).to_s + '&nbsp'
+    %tr
+      %td= t('profile.birth_year')
+      %td= @profile.date_of_birth.to_s + '&nbsp'
+    %tr
+      %td= t('profile.gender')
+      %td= profile_value(@profile, 'gender').to_s + '&nbsp'
+    
+    %tr
+      %td= t('profile.language')
+      %td= profile_value(@profile, 'language')
+    %tr
+      %td= t('profile.education')
+      %td= profile_value(@profile, 'education')
+    %tr
+      %td= t('profile.birth_country')
+      %td= country_from_code(profile_value(@profile, 'birth_country'))
+.divider
+.right
+  -unless @items.empty?
+    %h2== #{@limit} #{t('profile.last')}
+    = render :partial => 'items/items_sidebar', :locals => { :info => lambda { |i| i.active ? "<strong>#{i.responses.count}</strong> #{t('stats.votes')}" : t('item.not_approved') } }

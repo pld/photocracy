@@ -1,0 +1,20 @@
+china:
+  id: 1
+  name: China
+  code: cn
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>
+
+japan:
+  id: 2
+  name: Japan
+  code: jp
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>
+  
+us:
+  id: 3
+  name: United States
+  code: en
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>

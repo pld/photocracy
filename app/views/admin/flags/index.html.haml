@@ -1,0 +1,19 @@
+%h1 Listing flags
+
+%table
+  %tr
+    %th Item
+    %th Visit
+    %th Flag type
+    %th Content
+    %th Actions
+  -for flag in @flags
+    %tr
+      %td=h flag.item_id
+      %td=h flag.visit_id
+      %td=h flag.flag_type_id
+      %td=h flag.comment
+      %td
+        = link_to 'Show', admin_flag_path(flag)
+        = link_to 'Edit', edit_admin_flag_path(flag)
+        = link_to 'Destroy', admin_flag_path(flag), :confirm => 'Are you sure?', :method => :delete

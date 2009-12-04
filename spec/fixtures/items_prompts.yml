@@ -1,0 +1,12 @@
+one:
+  item_id: 1
+  prompt_id: 1
+two:
+  item_id: 2
+  prompt_id: 1
+three:
+  item_id: 1
+  prompt_id: 2
+four:
+  item_id: 2
+  prompt_id: 2

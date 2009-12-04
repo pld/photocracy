@@ -1,0 +1,11 @@
+%h1 New flag_type
+
+-form_for(@flag_type, :url => admin_flag_types_path) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.submit "Create"
+= link_to 'Back', admin_flag_types_path

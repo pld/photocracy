@@ -1,0 +1,13 @@
+.stat-border
+  = render :partial => 'header'
+  %table.items
+    %tr
+      %th Item
+      %th China
+      %th Japan
+      %th United States
+    %tbody#items
+      = render :partial => 'item', :collection => @items
+  %center
+    %h2= will_paginate @items, :id => :paginate
+  = render :partial => 'footer'

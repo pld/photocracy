@@ -1,0 +1,15 @@
+%tr
+  %td= user.created_at.to_s(:short)
+  %td= user.login
+  %td= user.email
+  %td
+    = user.state
+    -if user.activation_code
+      %p= "(Activation Code: #{user.activation_code})"
+  %td
+    %ul
+      -if user.state == 'suspended'
+        %li= link_to 'Unsuspend', unsuspend_admin_user_path(user)
+      -else
+        %li= link_to 'Suspend', suspend_admin_user_path(user)
+      %li= link_to 'Show', admin_user_path(user)

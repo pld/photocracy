@@ -1,0 +1,21 @@
+.left
+  %h1= t('share.h')
+  %p.block
+  -form_for(@mailing, :url => share_path ) do |f|
+    #mailing_errors= f.error_messages
+    %table.form
+      %tr
+        %td= f.label t('share.name')
+        %td= f.text_field :name
+      %tr
+        %td= f.label t('share.email')
+        %td= f.text_field :email
+      %tr.spaced
+        %td= f.label t('form.message')
+        %td= f.text_area :message, :size => '80x6'
+      %tr
+        %td
+        %td= f.submit t('form.submit'), :class => 'submit'
+.divider
+.right
+  = render :partial => 'shared/info'

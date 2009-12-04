@@ -1,0 +1,27 @@
+-form_for :user, :url => users_path do |f|
+  %table.session
+    %tbody.user
+      %tr
+        %td= label_tag t('form.email')
+        %td= f.text_field :email
+      %tr
+        %td= label_tag t('form.password')
+        %td= f.password_field :password, :value => ''
+      %tr
+        %td= label_tag 'password_confirmation', t('form.password_confirm')
+        %td= f.password_field :password_confirmation, :value => ''
+    %tr
+      %td
+        %br
+        %br
+        %br
+        %br
+        = t('form.please_enter_the')
+        %br
+        = t('form.displayed_text')
+      %td.button
+        = javascript_tag "var RecaptchaOptions = { theme : 'clean' };"
+        = get_captcha
+    %tr
+      %td
+      %td.button= submit_tag t('form.signup'), :class => 'submit'

@@ -1,0 +1,13 @@
+%tr{:id => "comment_#{comment.id}"}
+  %td= link_to comment.item.description || comment.item.id, :controller => :items, :action => :show, :id => comment.item.id
+  %td= comment.visit.user.login
+  %td= comment.content
+  %td= active_link(comment)
+  %td{:id => "comment_flag_count_#{comment.id}"}= comment.flags.count_active
+  %td
+    = link_to 'Show', admin_comment_path(comment)
+    = link_to 'Edit', edit_admin_comment_path(comment)
+    = link_to 'Destroy', admin_comment_path(comment), :confirm => 'Are you sure?', :method => :delete
+    = flags_link(comment)
+    = state_links(comment)
+= render :partial => 'admin/shared/flags', :locals => { :obj => comment, :type => 'comment' }

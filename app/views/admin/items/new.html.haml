@@ -1,0 +1,19 @@
+%h2 Batch Item Upload
+%ol
+  %li Placed valid image files in a folder
+  %li
+    Set the names of the image files (preceding the extension) to the names you want them to have on the server
+    %ul
+      %li Underscores are converted into spaces
+      %li Total file name length must be greater than 4 characters
+      %li File name must not begin with a "."
+  %li Compress the folder with ZIP as ".zip" file
+  %li Upload
+
+-form_for(@item, :url => admin_items_path, :html => { :multipart => true }) do |f|
+  = f.file_field :uploaded_data
+  = render :partial => 'questions', :locals => { :num => 1 }
+  = render :partial => 'questions', :locals => { :num => 2 }
+  = render :partial => 'questions', :locals => { :num => 3 }
+  = f.submit "Create"
+= link_to 'Back', admin_items_path

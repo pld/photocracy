@@ -1,0 +1,9 @@
+%h2== #{t('mailing.hello')} #{@mailing.name},
+%h3== #{@mailing.user.login} #{t('mailing.item.subject')}
+%p
+  %img{:src => "#{Constants::Urls::BASE.chop}#{@mailing.item.attachment.public_filename(:compare)}", :alt => "Photocracy #{t('mailing.photo')}"}
+  %h4= (link_to t('mailing.item.link'), @url)
+%br
+%br
+%br
+%h1= link_to('Photocracy.org', Constants::Urls::BASE)

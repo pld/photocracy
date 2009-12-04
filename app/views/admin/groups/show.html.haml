@@ -1,0 +1,13 @@
+%p
+  %strong Name: 
+  =h @group.name
+%p
+  %strong Code: 
+  =h @group.code
+-non_default_languages.each do |language, locale|
+  %p
+    %strong= language
+    =h @group.for_locale(locale)
+= link_to 'Edit', edit_admin_group_path(@group)
+|
+= link_to 'Back', admin_groups_path

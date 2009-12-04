@@ -1,0 +1,15 @@
+.left
+  %h1= t('item.submit.h')
+  %p.block= t('item.submit.p_1')
+  %p= t('item.submit.p_2')
+  %p
+    = t('item.submit.agree_and_contact')
+    = link_to(t('about.our_feedback_form'), feedback_path)
+    = t('actions.or')
+    == #{link_to(t('about.email'), 'mailto:info@photocracy.org')}.
+  = render :partial => 'form'
+.divider
+.right
+  %h2= t('item.submit.recently')
+  = render :partial => 'items_sidebar'
+= javascript_tag("Google.conversion('pdmMCOq3hAEQxNKW9gM');") unless @create.nil?

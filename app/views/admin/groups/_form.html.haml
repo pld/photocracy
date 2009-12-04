@@ -1,0 +1,11 @@
+%p= f.label :name
+%p= f.text_field :name
+%h2 Translations
+-non_default_languages.each do |language, locale|
+  %p= language
+  = text_field locale, :value, :value => @group.for_locale(locale)
+%p= f.label :code
+%p= f.text_field :code
+
+%p
+  = f.submit "Update"

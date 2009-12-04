@@ -1,0 +1,360 @@
+en:
+  nav:
+    about: about
+    add: add a photo
+    feedback: leave feedback
+    language: language
+    recent: recent winners
+    send: send to a friend
+    share: share
+    stats: statistics
+    view: view photos
+    vote: vote
+    privacy: Privacy Policy
+  datetime:
+    distance_in_words:
+      x_minute: minute ago
+      x_minutes: minutes ago
+      x_hour: hour ago
+      x_hours: hours ago
+      x_day: day ago
+      x_days: days ago
+      x_month: month ago
+      x_months: months ago
+      x_year: year ago
+      x_years: years ago
+      about_x_minute: minute ago
+      about_x_minutes: minutes ago
+      about_x_hour: hour ago
+      about_x_hours: hours ago
+      about_x_day: day ago
+      about_x_days: days ago
+      about_x_month: month ago
+      about_x_months: months ago
+      about_x_year: year ago
+      about_x_years: years ago
+  activerecord:
+    errors:
+      template:
+        header: Errors prohibited this item from being saved
+        body: "There were problems with the following fields:"
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: can't be blank
+              too_short: is too short (minimum is 6 characters)
+            password:
+              blank: can't be blank
+              too_short: is too short (minimum is 6 characters)
+            email:
+              blank: can't be blank
+              too_short: is too short (minimum is 6 characters)
+              invalid: should look like an email address
+            login:
+              too_short: is too short (minimum is 3 characters)
+              invalid: "<br/>Please use only letters, numbers, and .-_@"
+        comment:
+          attributes:
+            content:
+              blank: can't be blank. Please enter a comment below.
+  actions: 
+    edit: Edit
+    whatsthis: what's this
+    or: or
+    loading: Loading...
+    please: Please
+    back_to_voting: Go back to voting
+    click: Click on your choice
+  errors:
+    e5xx: We're sorry, but something went wrong.<br/>We've been notified about this issue and are investigating it.
+    e404: The requested resource could not be found.
+    restricted: To access this information you need a photocracy account.
+    logout: You are already logged in.
+  time:
+    ago: ago
+    added: added
+  share:
+    h: Share this site with a friend
+    name: Friend's name
+    email: Friend's email
+  stats:
+    h: Statistics
+    votes: votes
+    vote: vote
+    votes_on: votes on
+  feedback:
+    h: Feedback
+    success: Thank you for submitting your feedback.  Enjoy using Photocracy!
+    name: Your name
+    email: Your email
+    type: Type of feedback
+    types: comment on site, more information, collaboration, researcher inquiry, student inquiry, site error, other
+  comment:
+    flag:
+      success: The comment has been flagged.
+    add: Add your comment
+    comment: comment
+    success: Your comment has been submitted.
+    user: user
+    time: time
+    login: You must enter a valid login to comment.
+    posted: Posted
+    says: says
+  flag:
+    comment: Comment
+    h: Flag as inappropriate
+    type: Type
+    copyright: Copyright violation
+    offensive: Offensive
+    other: Other
+    success: The object has been flagged.
+  form:
+    all_countries: All Countries
+    attribution: Photographer Name
+    cancel: Cancel
+    create: Create
+    email: Email
+    login: Login
+    user_name: User name
+    message: Message
+    name: Name
+    password: Password
+    password_confirm: Confirm Password
+    remember: remember me
+    select: Select
+    submit: Submit
+    signup: Sign up
+    update: Update
+    photo: Photo
+    description: Description
+    tags: Tags
+    how_you_appear: This is how you will appear to others
+    choose_user_name: Your user name is how you will to appear to others.<br/>Please choose a user name below.
+    please_enter_the: Please enter the
+    displayed_text: displayed text
+  item:
+    inactive: inactive
+    taken_by: taken by
+    not_approved: Not yet approved
+    flag:
+      success: The item has been flagged.
+    send:
+      h: Send this item to a friend
+      name: Name
+      email: Email
+      message: Message
+      success: The item has been emailed.
+    submit:
+      fail:
+        h: The item could not be submitted.  Please see errors below.
+        upload: Upload photo error or invalid photo type.
+        flickr: The Flickr photo ID could not be found.
+        url: Invalid URL or photo type.
+      h: Submit a photo
+      agree:
+        have_rights: I have rights to this photo and want to place it in the
+        is_in_cc: or this photo is already in the
+        fail: To upload a photo you must agree to the below.
+      name: Name
+      question: Question
+      recently: Recently Added Photos
+      p_1: Photocracy enables users to add their own pictures and give their personal point of view on countries through the lens of photography. If you own the rights to a picture you think would (or wouldn’t) be representative of China, Japan, or the US, feel free to upload it to our website so that other users can see from your perspective. Also, if you know of photos that are distributed under the Creative Commons license or other open source resources, do let us know, as well!
+      p_2: To contribute to Photocracy simply upload your own photo, choose a Flickr photo, or choose a photo on the web. You may also include an optional description.  Supported photo formats include JPG, PNG, BMP.
+      agree_and_contact: You must check the below box agreeing to creative commons licensing in order to upload a photo.  If you have any questions please contact us through
+      upload: Upload
+      flickr: Flickr
+      url: URL
+      flickr_id: Flickr ID
+      type: Upload type
+      instructions:
+        upload: Select a photo to upload from your computer
+        flickr: Enter the Flickr ID (the numbers at the end of a Flickr URL)
+        url: Enter the URL of an image
+    comments: Comments
+    create: Item successfully submited and queued for review.
+    details: Photo Details
+    list: List Items
+    name: Name
+    ratings: Ratings
+    show: details
+    user: User
+    date: Date
+  items:
+    h: Photos
+    versus: vs
+    not_enough_votes: Not enough votes
+    which_best: which photo best represents
+    according_to: according to people from
+    anonymous: Anonymous
+    yours: Highest Rated Photos You Have Uploaded
+    votes_from_country: votes from
+    for: for
+    users_country: "Considers users from: "
+    image: Image
+    order_by: Order by
+    question: question
+    order:
+      date: Date
+      percent: Percent Wins
+      rank: Rank
+      score: Elo Score
+    photo: photo
+    photos: photos
+    sort: sorted by
+  mailing:
+    failure: An error occured and your message could not be sent.
+    success: Your message has been sent.
+    hello: Hello
+    photo: photo
+    item:
+      link: Click here to view it!
+      subject: has sent you a photo.
+    reset:
+      h: Your password has been reset.
+      explain: Visit this URL to reset your password
+    share:
+      h: just shared Photocracy with you!
+      body: Photocracy uses pair-wise comparisons, to measure cross-cultural and cross-national perceptions, particularly in China, Japan, and the US via the web. The ultimate aim is to understand what symbols are representative of a given country and how these perceptions differ by country.
+  profile:
+    h: Profile
+    age: Age
+    country: What country do you live in now?
+    sex: Sex
+    birth_year: In what year were you born?
+    country_question: What country do you live in?
+    create: Create a profile
+    edit: Edit your profile
+    education: What is your level of education?
+    edu_options:
+      none: None
+      middle: Middle School (Junior High School or equivalent)
+      high: High School
+      college: College
+      grad: Graduate School
+    gender: What is your gender?
+    gen_options:
+      man: Man
+      woman: Woman
+      other: Other
+    language: What do you consider your native language?
+    lan_options:
+      chinese_s: Chinese (Simplified)
+      chinese_t: Chinese (Traditional)
+      chinese_sh: Chinese (Shanghainese)
+      chinese_ct: Chinese (Cantonese)
+      japanese: Japanese
+      english: English
+      other: Other
+    last: last uploads
+    location: Where are you while using this site?
+    loc_options:
+      work: Work
+      home: Home
+      school: School
+      other: Other
+    add_languages: Do you speak any other langauges and what is your level of fluency in them?
+    abroad: What would best describe your amount of interaction with those outside your native country?
+    abroad_options:
+      none: No interaction
+      little: Small amount of interaction
+      medium: Medium amount of interaction
+      large: Large amount of interaction
+    birth_country: What country were you born in?
+    profession: What is your profession?
+    missing: Please create a profile.
+    new: New profile
+    show: Show
+    success: Profile successfully updated.
+  response:
+    these_won: these photos have won
+    of_the_time: of the time
+    add_stats: Additional Statistics
+    all_votes: All Votes
+    by_country: By Country
+    previous: Previous Photo
+    question: "Question: "
+    recent: most recent votes for
+    skip: skip
+    slow: Slow Down!
+    votes: votes
+    list:
+      skipped: skipped
+      over: over
+  sessions:
+    fail: "Couldn't log you in as "
+    h: Log In
+    logout: You have been logged out.
+    submit: login
+    success: Logged in successfully.
+    captcha_error: Please enter the text in the CAPTCHA to continue.
+  users:
+    forgot:
+      h: Forgot your password?
+      explain: Enter the email address for your Photocracy account and we will reset your password.
+      success: We have sent you an email.  Please go to the link in the email to reset your password.
+      no_email: We could not find a user with that the email address
+    reset:
+      h: Please reset your password.
+      explain: Enter and confirm a new password for your Photocracy account.
+      success: Your password has been reset.  Please login with your new password.
+      fail:
+        pass: The password and password confirmation do not match.
+        code: We couldn't find a user with that reset code.  Please check your email for the reset URL.
+    tag_lines: After Sign up you can
+    captcha_error: CAPTCHA text invalid.  Please reenter the text in the CAPTCHA.
+    activate:
+      success: Signup complete! Please sign in to continue.
+      fail_missing: The activation code was missing.  Please follow the URL from your email.
+      fail_code: We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in.
+    create: Create an account
+    error: We couldn't set up that account, sorry.  Please try again.
+    in: "Logged in as "
+    login: login
+    logout: Logout
+    out: Not logged in
+    signup: Sign up
+    signup_for: Sign up for Photocracy
+    reasons:
+      upload: Upload your photos
+      track: Track your votes
+      view: View the results
+      comment: Make comments
+    success: Thanks for signing up!  We're sending you an email with your activation code.
+    welcome: Welcome
+    you_have_rated: You have contributed
+    vote: vote
+    this_makes: This makes you our
+    most: most
+    influential_rater: influential rater.
+    this_visit: this visit
+    logged_out_welcome: Already registered? Log in below. Don't have an account?
+    photos_added: You have added
+    have_received: which have received over
+    has_received: which has received over
+    h: Sign up as a new user
+    for: for
+  about:
+    h: About
+    paragraph_1: Photocracy is searching for special photos and we've crowd-sourced the task to you.  We ask you questions like "Which photo better represent the United States?" and then by combining your votes with the votes of others we are able to find photos that are strongly associated with specific countries.  By having voters from all over the world we can learn about national identity and cross-national perceptions.  In fact, everyone can
+    see_results: see the results
+    paragraph_2a: We've also crowd-sourced the task of finding the photos to you.  If you have a photo that you think represents China, Japan, or the United States, please
+    upload_it: upload it
+    paragraph_2b: so that others can vote for it.  We've even made it easy for you to
+    from_flickr: upload photos directly from Flickr
+    paragraph_3a: Photocracy is an academic research project, and the initial data set will be used for a Senior Thesis at Princeton University.  If you would like to help, please vote, encourage others to vote, and
+    upload_some: upload some photos
+    paragraph_3b: Feel free to contact us through
+    our_feedback_form: our feedback form
+    email: email
+    salutation: Sincerely,
+    matt:
+      title: Assistant Professor of Sociology
+    josh:
+      title: Princeton University Class of 2009
+    right_h: Contributors and Contacts
+    technical: Web Development
+    contact: For website specific inquiries, please contact
+  privacy:
+    h: Privacy Policy
+    contact: Contact Us

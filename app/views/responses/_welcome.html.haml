@@ -1,0 +1,8 @@
+%p
+  = t('users.you_have_rated')
+  %strong#rated= pluralize(@items_rated, t('users.vote'))
+  == #{t('users.this_visit')}!
+%p
+  = t('users.logged_out_welcome')
+  %strong== #{link_to(t('form.signup'), signup_path)}!
+= render :partial => 'sessions/form'

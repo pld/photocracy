@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visit_id: 1
+  prompt_id: 1
+  vote_id_ext: 1
+  response_time: 15
+
+two:
+  visit_id: 1
+  prompt_id: 2
+  vote_id_ext: 2
+  response_time: 15

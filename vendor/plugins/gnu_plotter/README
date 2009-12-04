@@ -1,0 +1,35 @@
+= GNUPlotter
+
+Ruby on Rails plug-in for the Ruby gnuplot library.
+
+
+== Examples
+
+
+<em>Standard plot</em>
+
+<tt>GNUPlotter.plot({</tt>
+  :title => 'Plot',
+  :data => [1,2,4,5]
+<tt>})</tt>
+
+<em>Thermometer Plot</em>
+
+<tt>GNUPlotter.therm_plot({</tt>
+  :title => 'Thermometer Plot',
+  :data => [
+    [['A', 0, 10],
+    ['B', 25, 20],
+    ['C', 50, 30],
+    ['D', 75, 20],
+    ['E', 100, 10]],
+    [['A', 5, 30],
+    ['B', 20, 20],
+    ['C', 45, 10],
+    ['D', 70, 20],
+    ['E', 95, 30]]
+  ]
+<tt>})</tt>
+
+
+Copyright (c) 2009 Peter Lubell-Doughtie and the Trustees of Princeton University.  For additional license information see text file MIT-LICENSE.

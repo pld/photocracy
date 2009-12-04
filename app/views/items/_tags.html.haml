@@ -1,0 +1,14 @@
+%h1 Tags
+.block
+-for question in @item.questions
+  %p
+    Tags for
+    %strong= question.name
+    %ul
+      %li= @item.tag_list_on(question.groups.first.code.to_sym)
+  %p
+    -remote_form_for :tag, :url => { :action => 'tag' } do |f|
+      = f.hidden_field :item_id, :value => @item.id
+      = f.hidden_field :question_id, :value => question.id
+      Please separate tags with commas.
+      == Add tag for #{question.name} #{f.text_field :content} #{submit_tag('submit')}

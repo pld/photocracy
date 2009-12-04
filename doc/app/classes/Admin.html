@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Admin</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Admin</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Admin/AnalyticsHelper.html" class="link">Admin::AnalyticsHelper</a><br />
+Module <a href="Admin/BaseHelper.html" class="link">Admin::BaseHelper</a><br />
+Module <a href="Admin/CommentsHelper.html" class="link">Admin::CommentsHelper</a><br />
+Module <a href="Admin/ExperimentsHelper.html" class="link">Admin::ExperimentsHelper</a><br />
+Module <a href="Admin/FlagTypesHelper.html" class="link">Admin::FlagTypesHelper</a><br />
+Module <a href="Admin/FlagsHelper.html" class="link">Admin::FlagsHelper</a><br />
+Module <a href="Admin/GroupsHelper.html" class="link">Admin::GroupsHelper</a><br />
+Module <a href="Admin/HomeHelper.html" class="link">Admin::HomeHelper</a><br />
+Module <a href="Admin/ItemsHelper.html" class="link">Admin::ItemsHelper</a><br />
+Module <a href="Admin/PromptsHelper.html" class="link">Admin::PromptsHelper</a><br />
+Module <a href="Admin/QuestionsHelper.html" class="link">Admin::QuestionsHelper</a><br />
+Module <a href="Admin/ResponsesHelper.html" class="link">Admin::ResponsesHelper</a><br />
+Module <a href="Admin/TrackingsHelper.html" class="link">Admin::TrackingsHelper</a><br />
+Module <a href="Admin/VisitsHelper.html" class="link">Admin::VisitsHelper</a><br />
+Class <a href="Admin/AnalyticsController.html" class="link">Admin::AnalyticsController</a><br />
+Class <a href="Admin/BaseController.html" class="link">Admin::BaseController</a><br />
+Class <a href="Admin/CommentsController.html" class="link">Admin::CommentsController</a><br />
+Class <a href="Admin/ExperimentsController.html" class="link">Admin::ExperimentsController</a><br />
+Class <a href="Admin/FlagTypesController.html" class="link">Admin::FlagTypesController</a><br />
+Class <a href="Admin/FlagsController.html" class="link">Admin::FlagsController</a><br />
+Class <a href="Admin/GroupsController.html" class="link">Admin::GroupsController</a><br />
+Class <a href="Admin/HomeController.html" class="link">Admin::HomeController</a><br />
+Class <a href="Admin/ItemsController.html" class="link">Admin::ItemsController</a><br />
+Class <a href="Admin/PromptsController.html" class="link">Admin::PromptsController</a><br />
+Class <a href="Admin/QuestionsController.html" class="link">Admin::QuestionsController</a><br />
+Class <a href="Admin/ResponsesController.html" class="link">Admin::ResponsesController</a><br />
+Class <a href="Admin/TrackingsController.html" class="link">Admin::TrackingsController</a><br />
+Class <a href="Admin/UsersController.html" class="link">Admin::UsersController</a><br />
+Class <a href="Admin/VisitsController.html" class="link">Admin::VisitsController</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

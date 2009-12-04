@@ -1,0 +1,14 @@
+%h1 Listing profiles
+
+%table
+  %tr
+    %th User
+    %th Features
+  -for profile in @profiles
+    %tr
+      %td=h profile.user.login
+      %td
+        %ul
+          %li== Country: #{h profile.country}
+          -profile.profile_questions.each do |question|
+            %li== #{question.name}: #{question.value}

@@ -1,0 +1,10 @@
+%h1 New question
+
+-form_for(@question, :url => admin_questions_path) do |f|
+  = f.error_messages
+
+  = render :partial => 'form', :locals => { :f => f }
+  %p
+    = f.submit "Create"
+
+= link_to 'Back', admin_questions_path

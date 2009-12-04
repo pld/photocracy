@@ -1,0 +1,10 @@
+-form_tag :url => flick_admin_items_path do
+  %p Separate Photo ID's with a new line
+  = text_area_tag :photo_ids, nil, :size => '40x10'
+  %p
+    = label_tag 'Auto activate'
+    = check_box_tag :activate
+  #questions
+    = render :partial => 'questions', :locals => { :num => 1 }
+  %p= link_to_remote 'add another question select menu', :url => { :action => 'add_question' }, :with => "'num=' + $('#questions>*:last').attr('id')"
+  = submit_tag "Create"

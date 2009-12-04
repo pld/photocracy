@@ -1,0 +1,83 @@
+%table
+  %tr
+    %td
+      = render :partial => 'header'
+      -if @maitenance && current_user.id == 1
+        %ul
+          %li= link_to('Generate Stats', :action => 'generate_stats')
+          %li= link_to('Update Cache', :action => 'update_cache')
+          %li= link_to('Deactive Admin Responses', :action => 'deactivate_admin_responses')
+          %li= link_to('Clean Questions', :action => 'clean_questions')
+          -if @maintenance
+            %li= link_to('Archive Data', { :action => 'archive' }, :confirm => 'This deletes ALL non user or question data.  Are you sure?')
+    %td
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    %td
+      %center Location of the last 500 non-admin visitors
+      = javascript_include_tag "http://maps.google.com/maps?file=api&v=2&key=#{GOOGLE_MAPS_API_KEY}&sensor=false"
+      #visit_map{:style => "width: 500px; height: 300px"}
+      = google_map_visits
+
+-if @debug_percents
+  %table.stat
+    %tr
+      %th ID
+      %th Ratings Join
+      %th Ratings Cache
+      %th Wins Join
+      %th Wins Cache
+      %th Percent Wins Join
+      %th Percent Wins Cache
+    -ratings_cuml = wins_cuml = percents_cuml = 0
+    -for items, ratings, wins, percents in @questions
+      -bad_ratings_total = bad_wins_total = bad_percents_total = 0
+      -ratings_total = wins_total = percents_total = 0
+      -for item in items
+        -percent = ratings[1][item.id] != 0 ? 100 * (wins[1][item.id].to_f / ratings[1][item.id]) : 0
+        -percents_total += percent
+        %tr
+          -style = ''
+          %td{:style => style}= item.id
+          -style = (ratings[1][item.id] == ratings[0][item.id]) ? '': 'background:#FF6464'
+          -bad_ratings_total += 1 unless style.empty?
+          %td{:style => style}= ratings[1][item.id]
+          %td{:style => style}= ratings[0][item.id]
+          -style = (wins[1][item.id] == wins[0][item.id]) ? '' : 'background:#FF6464'
+          -bad_wins_total += 1 unless style.empty?
+          %td{:style => style}= wins[1][item.id]
+          %td{:style => style}= wins[0][item.id]
+          -style = percent.round == percents[item.id].round ? '' : 'background:#FF6464'
+          -bad_percents_total += 1 unless style.empty?
+          %td{:style => style}= percent
+          %td{:style => style}= percents[item.id]
+      %tr
+        %th SUM
+        -style = (ratings[0].values.sum == ratings[1].values.sum) ? '' : 'background:#FF6464'
+        %th{:style => style}= ratings[1].values.sum
+        %th{:style => style}= ratings[0].values.sum
+        -style = (wins[1].values.sum == wins[0].values.sum) ? '' : 'background:#FF6464'
+        %th{:style => style}= wins[1].values.sum
+        %th{:style => style}= wins[0].values.sum
+        -style = (percents_total == percents.values.sum) ? '' : 'background:#FF6464'
+        %th{:style => style}= percents_total
+        %th{:style => style}= percents.values.sum
+    %tr
+      %th BAD
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= bad_ratings_total
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= bad_wins_total
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= bad_percents_total
+      %tr
+    -ratings_cuml += ratings[0].values.sum
+    -wins_cuml += wins[0].values.sum
+    -percents_cuml += percents_total
+    %tr
+      %th SUM
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= ratings_cuml
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= wins_cuml
+      -style = (bad_ratings_total == 0) ? '' : 'background:#FF6464'
+      %th{:colspan => 2, :style => style}= percents_cuml

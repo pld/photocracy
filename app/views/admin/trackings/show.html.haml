@@ -1,0 +1,20 @@
+%p
+  %strong Date:
+  = time_ago_in_words(@tracking.created_at) + ' ago'
+%p
+  %strong Visit ID / User:
+  =h @tracking.visit.user ? @tracking.visit.user.login : @tracking.visit_id
+%p
+  %strong Controller:
+  =h @tracking.controller
+%p
+  %strong Action:
+  =h @tracking.action
+%p
+  %strong Mouse:
+  = @tracking.mouse && @tracking.mouse.split(')').join(')<br/>'
+%p
+  %strong Parameters:
+  %p=h @tracking.parameters
+
+= link_to 'Back', admin_trackings_path

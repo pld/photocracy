@@ -1,0 +1,49 @@
+%h1 Feedback Form Submitted
+%h2 Feedback Data
+%table
+  %tr
+    %td User
+    %td= @mailing.user_id.nil? ? '[logged out]' : @mailing.user.email
+  %tr
+    %td Name (can be null)
+    %td=h @mailing.name
+  %tr
+    %td Email (can be null)
+    %td=h @mailing.email
+  %tr
+    %td== Type
+    %td=h @mailing.mail_type
+  %tr
+    %td{:colspan => 2}== (type options are: #{t('feedback.types')})
+  %tr
+    %td Message
+    %td=h @mailing.message
+  %tr
+    %td Created
+    %td= @mailing.created_at.to_s(:long)
+  %tr
+    %td Sent (approx)
+    %td= @mailing.updated_at.to_s(:long)
+%h2 Visit Data
+%table
+  %tr
+    %td Locale
+    %td= @visit.locale
+  %tr
+    %td Country
+    %td= @visit.ip_country_name
+  %tr
+    %td City
+    %td=h @visit.ip_city
+  %tr
+    %td Host
+    %td=h @visit.host
+  %tr
+    %td User Agent
+    %td=h @visit.user_agent
+  %tr
+    %td Referrer
+    %td=h @visit.referrer
+  %tr
+    %td Visited At
+    %td= @visit.created_at.to_s(:long)

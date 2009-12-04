@@ -1,0 +1,17 @@
+%tr{:id => "item_#{item.id}"}
+  %td= item.updated_at.to_s(:short)
+  %td= link_to(item.visit.user.email, admin_user_path(item.visit.user)) if item.visit && item.visit.user
+  %td= item.attribution
+  %td= (groups = item.questions.map { |q| q.groups.first }).map(&:name).join('<br/>')
+  %td= link_to_item(item)
+  %td= tag_list_for_item_groups(item, groups)
+  %td= active_link(item)
+  %td{:id => "item_flag_count_#{item.id}"}= item.flags.count_active
+  %td
+    %p
+      = flags_link(item)
+      = state_links(item)
+    %p
+      = link_to 'edit', edit_admin_item_path(item)
+      /= link_to 'delete', admin_item_path(item), :method => :delete, :confirm => "Confirm delete item: #{item.description || item.id}?"
+= render :partial => 'admin/shared/flags', :locals => { :obj => item, :type => 'item' }

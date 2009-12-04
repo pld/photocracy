@@ -1,0 +1,14 @@
+%table.block
+  -@user_items.each do |item|
+    %tr
+      %td= link_to_item(item, :thumb)
+      %td
+        -if item.active
+          == #{@user_item_info[item.id]} #{t('stats.votes')}
+        -else
+          = t('item.inactive')
+        %div== #{t('time.added')} #{time_ago_in_words(item.created_at)}
+  -unless (params[:controller] == 'items' && params[:action] == 'new')
+    %tr
+      %td{:colspan => 2}
+        %h2= link_to(t('nav.add').capitalize, new_item_path)

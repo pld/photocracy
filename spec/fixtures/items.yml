@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% 1.upto(15) do |i| %>
+item_<%= i %>:
+  id: <%= i %>
+  item_id_ext: 999999999
+  description: MyString
+  active: <%= true %>
+<% end %>

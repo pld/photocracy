@@ -1,0 +1,14 @@
+%h1 Listing flag_types
+
+%table
+  %tr
+    %th Name
+    %th Action
+  -for flag_type in @flag_types
+    %tr
+      %td=h flag_type.name
+      %td
+        = link_to 'Show', admin_flag_type_path(flag_type)
+        = link_to 'Edit', edit_admin_flag_type_path(flag_type)
+        = link_to 'Destroy', admin_flag_type_path(flag_type), :confirm => 'Are you sure?', :method => :delete
+= link_to 'New flag_type', new_admin_flag_type_path

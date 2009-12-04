@@ -1,0 +1,360 @@
+es:
+  nav:
+    about: información
+    add: añadir una foto
+    feedback: provea opinión
+    language: idioma
+    recent: ganadores reciente
+    send: envia a  un amigo
+    share: compartir
+    stats: estadísticas
+    view: mirar fotos
+    vote: votar
+    privacy: Política de Privacidad
+  datetime:
+    distance_in_words:
+      x_minute: minuto pasado
+      x_minutes: minutos pasados
+      x_hour: hora pasado
+      x_hours: horas pasados
+      x_day: día pasado
+      x_days: días pasados
+      x_month: mes pasado
+      x_months: meses pasados
+      x_year: año pasado
+      x_years: años pasados
+      about_x_minute: minuto pasado
+      about_x_minutes: minutos pasados
+      about_x_hour: hora pasado
+      about_x_hours: horas pasados
+      about_x_day: día pasado
+      about_x_days: días pasados
+      about_x_month: mes pasado
+      about_x_months: meses pasados
+      about_x_year: año pasado
+      about_x_years: años pasados
+  activerecord:
+    errors:
+      template:
+        header: No podemos guardar este item porque hay errors
+        body: "Hay problemas con los inscriptiones enseguida:"
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: no puede ser blanco
+              too_short: es tan corto (mínimo es 6 caracteres)
+            password:
+              blank: no puede ser blanco
+              too_short: es tan corto (mínimo es 6 caracteres)
+            email:
+              blank: no puede ser blanco
+              too_short: es tan corto (mínimo es 6 caracteres)
+              invalid: debe aparacer como un correo electrónico
+            login:
+              too_short: es tan corto (mínimo es 3 caracteres)
+              invalid: "<br/>Por favor usaría solo letras, numeros, y .-_@"
+        comment:
+          attributes:
+            content:
+              blank: no puede ser blanco.  Por favor escribiría un comentario abajo
+  actions:
+    edit: Editar
+    whatsthis: que es esto
+    or: o
+    loading: La carga...
+    please: Por favor
+    back_to_voting: Contiua votando
+    click: Haga clic en su eleción
+  errors:
+    e5xx: Disculpe, pero fue un error.<br/>Hubimos sido notficando de la problem y estamos investigandola.
+    e404: No podemos encontrar la página solicitada.
+    restricted: Para acceder a este información usted necesita una cuenta de Photocracy.
+    logout: Todavia usted está conectado.
+  time:
+    ago: pasado
+    added: añadado
+  share:
+    h: Comparte Photocracy con un amigo
+    name: Nombre de su amigo
+    email: Email de su amigo
+  stats:
+    h: Estadísticas
+    votes: votas
+    vote: vota
+    votes_on: votas por
+  feedback:
+    h: Opinión
+    success: Gracias por su opinión. ¡Disfruta usando Photocracy!
+    name: Su nombre
+    email: Su email
+    type: Tipo de opinión
+    types: comentario de sitio, mas información, colaboración, pregunta de investigador, pregunta de estudiante, error de sitio, otro
+  comment:
+    flag:
+      success: El commentario hube sido anotado.
+    add: Añadir su commentario
+    comment: commentario
+    success: Su commentario hube sido sometido.
+    user: usario
+    time: hora
+    login: Usted necesita entrar un commentario.
+    posted: Fijado
+    says: dice
+  flag:
+    comment: Commentario
+    h: Anota como improprio
+    type: Tipo
+    copyright: Violación de los derechos de autor
+    offensive: Ofensivo
+    other: Otro
+    success: El objecto hube sido anotado.
+  form:
+    all_countries: Todos los países
+    attribution: Nombre de Fotógrafo
+    cancel: Cancelar
+    create: Crear
+    email: Email
+    login: Nombre de usario
+    user_name: Nombre de usario
+    message: Mensaje
+    name: Nombre
+    password: Contraseña
+    password_confirm: Confirmar Constraseña
+    remember: recordarme
+    select: Seleccionar
+    submit: Sometar
+    signup: Crear una cuenta
+    update: Actualizar
+    photo: Foto
+    description: Descipción
+    tags: Etiquetas
+    how_you_appear: Usted aparecerá a los demás como este
+    choose_user_name: Su nombre de usario es como aparecerá a los demás.<br/>Por favor elegiría un nombre de usario abajo.
+    please_enter_the: Por favor entraría el
+    displayed_text: texto mostrado
+  item:
+    inactive: inactivado
+    taken_by: tomado por
+    not_approved: Todavia no aprobado
+    flag:
+      success: El artículo hube sido reportado.
+    send:
+      h: Enviar esta foto a un amigo
+      name: Nombre
+      email: Email
+      message: Mensaje
+      success: El artículo hube sido enviado.
+    submit:
+      fail:
+        h: No podemos someter el artículo. Por favor miraría los errores abajo.
+        upload: Error de cargar o tipo no válido de foto.
+        flickr: No podemos encontrar la foto ID de Flickr.
+        url: URL or tipo de foto no válido.
+      h: Sometar una foto
+      agree:
+        have_rights: Tengo los derechos para este foto y quirría ponerlo en el
+        is_in_cc: o esta foto es todavia en el
+        fail: Para cargar una foto necesita acordar con las notas de abajo
+      name: Nombre
+      question: Pregunta
+      recently: Fotos recentament añadada
+      p_1: Photocracy habila usarios para añadir sus propios fotos y dan sus personales puntos de vista sobre países a través de el lenta de fotografia. Si posea los derechos para una foto que usted piensa estaría (o no estaría) representiva de China, Japon, o el EEUU, por favor cargalo a nuestro sitio así que otros usarios podrían ver su perspectiva.  Tambien, si sabe otras fotos que son distribuida por la licencia Creative Commons o otras recursos de código abierto, ¡diríanos!
+      p_2: Para contribuir a Photocracy simplentamente carga su propio foto, eligir una foto de Flickr, o una foto en el internet.  Tambien, prodía incluir un descripción opciónal.  Podemos tomar fotos en los formatos JPG, PNG, BMP.
+      agree_and_contact: Usted necesita marcar la caja abajo acuerdando con la licencia Creative Commons para cargar una foto.  Si tiene algunas preguntas por favor informaríanos a través de
+      upload: Cargar
+      flickr: Flickr
+      url: URL
+      flickr_id: ID de Flickr
+      type: Tipo de cargar
+      instructions:
+        upload: Selecionar una foto para cargar de su computadora
+        flickr: Introducir el ID de Flickr (los numeros a la cola del URl de Flickr)
+        url: Introducir el URL de una foto
+    comments: Commentarios
+    create: Artículo sometado y hecha cola para revisar.
+    details: Detalles de Foto
+    list: Alistar los Artículos
+    name: Nombre
+    ratings: Puntuaciones
+    show: detalles
+    user: Usario
+    date: Fecha
+  items:
+    h: Fotos
+    versus: frente a
+    not_enough_votes: No todavia bastante votos
+    which_best: que foto mejor representa
+    according_to: de acuerdo con gente de
+    anonymous: Anónimo
+    yours: Altisimo valuadas fotos usted ha cargadas
+    votes_from_country: votos de
+    for: para
+    users_country: "Considerando usarios de: "
+    image: Foto
+    order_by: Ordenar para
+    question: pregunta
+    order:
+      date: fecha
+      percent: percentaje de éxitos
+      rank: puntuacione
+      score: Calificaión Elo
+    photo: foto
+    photos: fotos
+    sort: clasificado para
+  mailing:
+    failure: Un error occurió y no podemos enviar su mensaje.
+    success: Su mensaje hubo sido enviado.
+    hello: Hola
+    photo: foto
+    item:
+      link: ¡Haga clic aquí para verlo!
+      subject: hubo enviadose una foto.
+    reset:
+      h: Su contraseña hubo sido restablecimiento.
+      explain: Visita este URL para restablecer su contraseña
+    share:
+      h: acaba de compartido Photocracy con usted!
+      body: Photocracy usa comparación de par (pair-wise), para medir percepciónes a través de cultural y naciónes, particular en China Japon, y el EEUU por la internet. El último objectivo es para entender que símbolos son representativo de un pair particular y como estos percepciónes diferen por pais.
+  profile:
+    h: Perfil
+    age: Edad
+    country: ¿En que pais vive ahora?
+    sex: Sexo
+    birth_year: ¿En que año nació?
+    country_question: ¿En que pais vive?
+    create: Craer un perfil
+    edit: Editar su perfil
+    education: ¿Que es su nivel de educación?
+    edu_options:
+      none: Ninguno
+      middle: Escuela intermedia o equivalente
+      high: Colegio
+      college: Universidad
+      grad: Grado de maestro, doctorado, o equivalent
+    gender: ¿Que es su género?
+    gen_options:
+      man: Hombre
+      woman: Mujer
+      other: Otro
+    language: ¿Que considera su idioma nativo?
+    lan_options:
+      chinese_s: Chino (Simplificado)
+      chinese_t: Chino (Tradiciónal)
+      chinese_sh: Chino (Shanghainese)
+      chinese_ct: Chino (Cantonese)
+      japanese: Japonés
+      english: Inglés
+      other: Otro
+    last: pasados cargados
+    location: ¿Donde es usted cuando usando este sitio?
+    loc_options:
+      work: Trabajo
+      home: Case
+      school: Escuela
+      other: Otro
+    add_languages: ¿Usted habla otro idiomas y que ees su nivel de fluencia en los?
+    abroad: ¿Como mejor describiría su cantidad de interación con gente afuera de su pais nativo?
+    abroad_options:
+      none: No interación
+      little: Pequeno cantidadad de interación
+      medium: Medio cantidad de interación
+      large: Granded cantidad de interación
+    birth_country: ¿En que pais nació?
+    profession: ¿Que es su profesión?
+    missing: Por favor crearía un perfil.
+    new: Nuevo perfil
+    show: Mostrar
+    success: Perfil actualizado.
+  response:
+    these_won: estas fotos han ganado
+    of_the_time: del tiempo
+    add_stats: Estadísticas Adicional
+    all_votes: Todas la Votas
+    by_country: Para Pais
+    previous: Pasado Foto
+    question: "Pregunta: "
+    recent: más reciente votas para
+    skip: omitir
+    slow: ¡Más lente!
+    votes: votas
+    list:
+      skipped: omitido
+      over: ganó contra
+  sessions:
+    fail: "No podemos iniciarse como "
+    h: Iniciar
+    logout: Usted ha sido salido.
+    submit: iniciar
+    success: Iniciado con éxito.
+    captcha_error: Por favor entraría el texto en el CAPTCHA para continuar.
+  users:
+    forgot:
+      h: ¿Olvida su contraseña?
+      explain: Escribe el correo electrónico para su cuenta de Photocracy y restableceremos su contraseña.
+      success: Hemos enviadose un email.  Por favor irga al sitio escribido en el email para restablecer su contraseña.
+      no_email: No podemos encontrar un usario con ese correo electrónico
+    reset:
+      h: Por favor restablecer su contraseña.
+      explain: Escribe y confirma un nuevo contraseña para su cuenta de Photocracy.
+      success: Su contraseña hubo sido restablecido.  Por favor inicia con su nuevo contraseña.
+      fail:
+        pass: El contraseña y el confirmación de contraseña no son igual.
+        code: No podemos encontrar un usario con ese codigo de restablecimiento. Por favor irga a su email para el URl de restablecimiento.
+    tag_lines: Despues de creando una cuenta podría
+    captcha_error: Texto de CAPTCHA no es válido.  Por favor reentraría el text en el CAPTCHA.
+    activate:
+      success: ¡Registro completo! Por favor invia para continuar.
+      fail_missing: El codigo de activación fue perdido. Por favor seguiría el URL en su email.
+      fail_code: No pdemos encontrar un usario con ese codigo de activación. ¿Ha mirado su email? O quizas todavia su cuento hubo sido activado.  Por favor intentaría iniciar de nuevo.
+    create: Crear una cuenta
+    error: Disculpe, no podemos crear esa cuenta. Por favor intentaría de nuevo.
+    in: "Inciado como "
+    login: iniciar
+    logout: Salir
+    out: No iniviado
+    signup: De registro
+    signup_for: De registro para Photocracy
+    reasons:
+      upload: Carga sus fotos
+      track: Rastrear sus votas
+      view: Mirar los resueltos
+      comment: Hacer commentarios
+    success: ¡Gracias para su registración!  Estamos enviandose un email con su codigo de activación.
+    welcome: Bienvenido
+    you_have_rated: Usted ha contribuido
+    vote: vota
+    this_makes: Por este usted esta nuestro
+    most: más
+    influential_rater: votante influencial.
+    this_visit: este visita
+    logged_out_welcome: ¿Todavia registrado? Iniciar abajo. ¿No tiene una cuenta?
+    photos_added: Usted ha añadido
+    have_received: que han recibidos más que
+    has_received: que ha recibido más que
+    h: Registro como un usario nuevo
+    for: para
+  about:
+    h: Información
+    paragraph_1: Photocracy es buscando para espcial fotos y hemos multitud fuente la tarea a usted. Preguntamos a usted preguntas como ¿Que foto es un mejor representación de los Estados Unidos?" y despues para conjuntando sus votas con los votas de los demás podemos encontrar fotos que son fuerte asociado con específico países.  Poeque tenemos votantes de todo el mundo podemos aprender sobre indentidad naciónal y percepciónes a través de naciónes.  En verdad, todo el mundo puede
+    see_results: mirar los resueltos
+    paragraph_2a: Tambien, hemos multitud fuente a usted la tarea de encontrando las fotos. Si usted ha una foto que piensa es representativa de Cina, Japon, o los Estado Unidos, por favor
+    upload_it: cargarlo
+    paragraph_2b: por eso los demás pueden votan por lo.  Heos aún hecholo facíl para
+    from_flickr: cargar fotos directamene de Flickr
+    paragraph_3a: Photocracy es un proyecto de investigación académico, y el conjunto de datos inicial usará para un Tesis Senior en Princeton University.  Si gustaría ayudar, por favor votaría, alentaría los demás para votarían, y
+    upload_some: cargaría algunas fotos
+    paragraph_3b: Si quirría contactarnos a través de
+    our_feedback_form: nuestro forma de opinión
+    email: email
+    salutation: Sinceramente,
+    matt:
+      title: Profesor Asistente de Sociología
+    josh:
+      title: Princeton University Clase de 2009
+    right_h: Contribuyentes y Contactos
+    technical: Desarollo Web
+    contact: Para preguntas específicas al sitio web, contactaría
+  privacy:
+    h: Política de Privacidad
+    contact: Contactarnos

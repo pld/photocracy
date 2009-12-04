@@ -1,0 +1,37 @@
+.stat-border
+  = render :partial => 'header'
+  %p Interaction with the site is defined as performing more than 3 site actions, which are listed in the action graphs below.
+  -@all.each do |loc|
+    %p
+      %strong== Considering users from #{loc}
+      %br
+      %strong= number_to_percentage(100 * (@visits_to_voters[loc].first.to_f / @visits_to_voters[loc].sumup), :precision => 1)
+      of visitors voted.
+      %strong= @visits_to_voters[loc].first
+      unique visitors voted.
+      %strong= @visits_to_voters[loc].last
+      unique visitors did not vote.
+      %br
+      %strong= number_to_percentage(100 * (@visits_to_register[loc].first.to_f / @visits_to_register[loc].sumup), :precision => 1)
+      of visitors registered.
+      %strong= @visits_to_register[loc].first
+      unique visitors registered.
+      %strong= @visits_to_register[loc].last
+      unique visitors did not register.
+      %br
+      %strong=number_to_percentage(100 * (@visits_to_interact[loc].first.to_f / @visits_to_interact[loc].sumup), :precision => 1)
+      of visitors interacted with the site.
+      %strong= @visits_to_interact[loc].first
+      unique visitors interacted with the site.
+      %strong= @visits_to_interact[loc].last
+      unique visitors did not interact with the site.
+  -for group, types in ['per_day', 'histogram', 'per_visitor', 'per_action'].zip([stat_types_per_day, nil, nil, stat_types_per_action])
+    = plot_selects(group, types)
+    -for order in orders(group)
+      -for type in types || stat_types
+        -for country in @all
+          -id = "#{country.downcase}_#{type}_#{group}#{order.empty? ? '' : '_' + order}"
+          %p{:class => "plot_#{group}", :id => id, :style => 'display:none'}= image_tag("/admin/images/#{id}.png")
+  = show_all_firsts
+  %p Actions enclosed in brackets are form submits.  E.g. '[vote]' is the submission of a vote whereas 'vote' is viewing the vote page.
+  = render :partial => 'footer'

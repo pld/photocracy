@@ -1,0 +1,42 @@
+.left
+  %h1= t('about.h')
+  %p.block
+    = t('about.paragraph_1')
+    == #{link_to(t('about.see_results'), items_path)}.
+  %p
+    = t('about.paragraph_2a')
+    = link_to(t('about.upload_it'), new_item_path)
+    = t('about.paragraph_2b')
+    == #{link_to(t('about.from_flickr'), new_item_path)}.
+  %p
+    = t('about.paragraph_3a')
+    == #{link_to(t('about.upload_some'), new_item_path)}.
+    = t('about.paragraph_3b')
+    = link_to(t('about.our_feedback_form'), feedback_path)
+    = t('actions.or')
+    == #{link_to(t('about.email'), 'mailto:info@photocracy.org')}.
+  %br
+  %p
+    = t('about.salutation')
+    %br
+    %br
+    == #{link_to('Matthew Salganik', 'http://sociology.princeton.edu/Faculty/Salganik/')}, #{t('about.matt.title')}
+    %br
+    == Josh Weinstein, #{t('about.josh.title')}
+.divider
+.right
+  %h2= t('about.right_h')
+  %p.block
+    Matthew Salganik
+    %br
+    = t('about.matt.title')
+  %p
+    Josh Weinstein
+    %br
+    = t('about.josh.title')
+  %p
+    Peter Lubell-Doughtie
+    %br
+    = t('about.technical')
+  %p
+    == #{t('about.contact')}: #{link_to_contact_email}

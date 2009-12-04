@@ -1,0 +1,3 @@
+%tbody{:class => 'question', :id => "items_#{question.id}", :style => (question.id == @active_question_id) ? '' : 'display:none'}
+  = render :partial => 'item', :collection => @item_ids[question.id], :locals => { :question_id => question.id }
+    

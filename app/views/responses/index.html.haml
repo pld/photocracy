@@ -1,0 +1,12 @@
+.left
+  %table.responses
+    %tr
+      %th{:colspan => 5}
+        =@limit
+        =t('response.recent')
+        =response_question_select_tag
+    %tbody#responses= render :partial => 'response', :collection => @responses
+.divider
+.right
+  %h2.up= t('items.yours')
+  = render :partial => 'items/items_sidebar', :locals => { :info => lambda { |item| "<strong>#{item.win_percent.round}%</strong> wins" } }

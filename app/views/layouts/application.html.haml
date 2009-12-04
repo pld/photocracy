@@ -1,0 +1,38 @@
+!!! 1.0
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :"xml:lang" => I18n.default_locale, :lang => I18n.default_locale }
+%head
+  %meta{:"http-equiv" => "content-type", :content => "text/html; charset=UTF-8"}
+  %meta{:"http-equiv" => "X-UA-Compatible", :content => "IE=EmulateIE8"}
+  %title== #{'[STAGE] ' unless PRODUCTION}Photocracy - #{controller.controller_name.singularize.capitalize}
+  %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+  = stylesheet_link_tag 'main'
+  /[if IE 8]
+    = stylesheet_link_tag 'main_ie8'
+  /[if IE 7]
+    = stylesheet_link_tag 'main_ie7'
+  /[if IE 6]
+    = stylesheet_link_tag 'main_ie6'
+  = javascript_include_tag :defaults
+  = javascript_include_tag 'google'
+  -if @prompt_js
+    = javascript_include_tag 'prompt'
+    = javascript_include_tag 'mouse'
+  -elsif @admin_user
+    = javascript_include_tag 'admin'
+%body{:onload => "Back.check()"}
+  = javascript_tag("AUTH_TOKEN = '#{form_authenticity_token}';") if protect_against_forgery?
+  .container#container
+    = render :partial => 'shared/header'
+    .content
+      %span#flash_notice
+        -if flash[:notice] || @message
+          %h2.notice#flash_notice_content= flash[:notice]
+          = javascript_tag("Message.delayedHide(#{Constants::Config::FLASH_DELAY})") unless @message
+      %span#flash_error
+        -if flash[:error]
+          %h2.error#flash_error_content= flash[:error]
+      %div
+      = yield
+  = render :partial => 'shared/footer'
+  %span#tracking{:style => "display:none"}
+  = analytics

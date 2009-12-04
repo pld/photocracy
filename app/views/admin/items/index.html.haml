@@ -1,0 +1,22 @@
+%ul
+  / %li= link_to 'Upload Batch Items', :action => :new
+  %li= link_to 'Upload from Flickr', :action => :flick
+%h1
+  -if params[:action] == 'index'
+    == Listing all items (#{link_to('list flagged items', :action => 'flagged')})
+  -else
+    == Listing flagged items (#{link_to('list all items', admin_items_path)})
+%table
+  %tr
+    %th Uploaded at
+    %th User
+    %th Attribution
+    %th Question(s)
+    %th Image
+    %th Tags
+    %th Status
+    %th Active Flags
+    %th Actions
+  %tbody#items
+    = render :partial => 'item', :collection => @items
+= will_paginate @items, :id => :paginate

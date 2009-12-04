@@ -1,0 +1,13 @@
+%table.back
+  %tr
+    %td.text{:colspan => 2}= link_to("#{prefix ||= ''}#{t('actions.back_to_voting')}", response_path(0))
+  -if @controller.active_prompt && (items = @controller.active_prompt.items)
+    %tr
+      %td
+        %table.boxing
+          %tr
+            %td= rounded(item_display(items[0], :thumb))
+      %td
+        %table.boxing
+          %tr
+            %td= rounded(item_display(items[1], :thumb))

@@ -1,0 +1,12 @@
+%h1 Editing question
+
+-form_for(@question, :url => admin_question_path(@question)) do |f|
+  = f.error_messages
+
+  = render :partial => 'form', :locals => { :f => f }
+
+  %p
+    = f.submit "Update"
+= link_to 'Show', admin_question_path(@question)
+|
+= link_to 'Back', admin_questions_path

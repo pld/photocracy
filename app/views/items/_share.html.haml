@@ -1,0 +1,14 @@
+#mailing{:style => "display:none"}
+  %h2= t('item.send.h')
+  #mailing_errors
+  -remote_form_for :mailing, :url => { :action => :share } do |f|
+    %h3= f.label t('item.send.name')
+    = f.text_field :name
+    %h3= f.label t('item.send.email')
+    = f.text_field :email
+    %h3= f.label t('item.send.message')
+    = f.text_area :message, :size => '34x6'
+    = f.hidden_field :item_id, :value => @item.id
+    %p
+      = submit_tag t('form.cancel'), :onclick => "$('#mailing').hide(); return false", :class => 'submit'
+      = submit_tag t('form.submit'), :class => 'submit'

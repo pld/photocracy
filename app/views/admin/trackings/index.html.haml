@@ -1,0 +1,13 @@
+%h1 Listing trackings
+
+%table
+  %tr
+    %th Date
+    %th Hashed IP / User
+    %th Controller
+    %th Action
+    %th Parameters
+    %th Actions
+  %tbody#trackings
+    = render(:partial => 'tracking', :collection => @trackings)
+= will_paginate @trackings, :id => :paginate

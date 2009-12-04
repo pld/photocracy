@@ -1,0 +1,13 @@
+%h1 Listing comments
+
+%table
+  %tr
+    %th Item
+    %th User
+    %th Content
+    %th Active
+    %th Flags
+    %th Actions
+  %tbody#comments
+    = render :partial => 'comment', :collection => @comments
+=  will_paginate @comments, :id => :paginate

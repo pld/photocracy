@@ -1,0 +1,3 @@
+%p= link_to 'admin home', admin_path
+-if controller.class.superclass == Admin::BaseController && (params[:action] == 'settings' || controller.class != Admin::HomeController)
+  = render :partial => 'admin/home/header'

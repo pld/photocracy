@@ -1,0 +1,15 @@
+%h1 Listing prompts
+
+%table
+  %tr
+    %th Question
+    %th Prompt id ext
+    %th Actions
+  -for prompt in @prompts
+    %tr
+      %td=h prompt.question_id
+      %td=h prompt.prompt_id_ext
+      %td
+        = link_to 'Show', admin_prompt_path(prompt)
+        = link_to 'Edit', edit_admin_prompt_path(prompt)
+        = link_to 'Destroy', admin_prompt_path(prompt), :confirm => 'Are you sure?', :method => :delete

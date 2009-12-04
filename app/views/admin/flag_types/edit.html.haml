@@ -1,0 +1,13 @@
+%h1 Editing flag_type
+
+-form_for(@flag_type, :url => admin_flag_type_path(@flag_type)) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.submit "Update"
+= link_to 'Show', admin_flag_type_path(@flag_type)
+|
+= link_to 'Back', admin_flag_types_path

@@ -1,0 +1,47 @@
+%h1 Item Flagged
+%h2 Flagging Data
+%table
+  %tr
+    %td Item ID
+    %td= @flag.item_id
+  %tr
+    %td Comment ID
+    %td=h @flag.comment_id
+  %tr
+    %td Visit ID
+    %td=h @flag.visit_id
+  %tr
+    %td Type
+    %td=h @flag.flag_type.name
+  %tr
+    %td Content
+    %td=h @flag.content
+  %tr
+    %td Created
+    %td= @flag.created_at.to_s(:long)
+  %tr
+    %td Submitted (approx)
+    %td= @flag.updated_at.to_s(:long)
+%h2 Visit Data
+%table
+  %tr
+    %td Locale
+    %td= @visit.locale
+  %tr
+    %td Country
+    %td= @visit.ip_country_name
+  %tr
+    %td City
+    %td=h @visit.ip_city
+  %tr
+    %td Host
+    %td=h @visit.host
+  %tr
+    %td User Agent
+    %td=h @visit.user_agent
+  %tr
+    %td Referrer
+    %td=h @visit.referrer
+  %tr
+    %td Visited At
+    %td= @visit.created_at.to_s(:long)

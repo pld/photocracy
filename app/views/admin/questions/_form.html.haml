@@ -1,0 +1,10 @@
+%p
+  = f.label :name
+  = f.text_field :name
+%p
+  = f.label :group
+  = select "group", "id", Group.find(:all).collect { |g| [ g.name, g.id ] }
+%h2 Translations
+-translations.each do |language, locale|
+  %p= language
+  = text_field locale, :value, :value => @question.for_locale(locale)

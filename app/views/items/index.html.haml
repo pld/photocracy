@@ -1,0 +1,17 @@
+.left
+  %table.items
+    %tr
+      %th{:colspan => 2}
+        = t('items.which_best')
+      %th{:colspan => 5}
+        = question_select_tag
+    %tr
+      %th{:colspan => 2}
+        = t('items.according_to')
+      %th{:colspan => 5}
+        == #{country_select_tag}?
+    = render :partial => 'question', :collection => @questions
+.divider
+.right
+  %h2.up= t('items.yours')
+  = render :partial => 'items_sidebar'

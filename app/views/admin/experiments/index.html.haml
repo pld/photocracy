@@ -1,0 +1,39 @@
+%h1 Vary English Question
+
+%table.admin
+  %tr
+    %th Question
+    %th Count
+    %th Percent in Group
+  -for questions in @question_counts
+    -unless questions.empty?
+      %tr
+        %th Cumulative for Group
+        %th= cuml = questions.transpose.last.sum
+        %th 100%
+      -questions.each do |question, count|
+        %tr
+          %td= question
+          %td= count
+          %td== #{(100 * (count / cuml.to_f)).round}%
+%p
+
+%h1 Vary Number of Prompts per Question
+%table.admin
+  %tr
+    %th Question
+    %th Number of Prompts
+    %th Number of Votes
+    %th Percent in Question
+  -for questions in  @prompt_counts
+    %tr
+      %th== Cumulative for #{questions.first.first}
+      %th
+      %th= cuml = questions.transpose.last.sum
+      %th 100%
+    -questions.each do |name, prompts, votes|
+      %tr
+        %td= name
+        %td= prompts
+        %td= votes
+        %td== #{(100 * (votes / cuml.to_f)).round}%

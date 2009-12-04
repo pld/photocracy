@@ -1,0 +1,49 @@
+= google_control_script
+.slow#slow_container
+  %h2#slow{:style => 'display:none'}= t('response.slow')
+%h1.underline.progress
+  %table
+    %tr#question_box
+      = render :partial => 'question'      
+    %tr.click#click_message
+      %td.click= google_optimize('click_line2', t('actions.click'))
+%div.progress
+  %div
+    .progress-bar#progress{:style => progress_style}
+    .progress-bar{:style => progress_style(10)}
+    .progress-bar{:style => progress_style(30)}
+    .progress-bar{:style => progress_style(30)}
+    .progress-bar{:style => progress_style(10)}
+    .progress-bar{:style => progress_style}
+%table.rater
+  %tr
+    %td.item
+      %table.boxing{:align => 'right'}
+        %tr
+          %td
+            #item_left= render :partial => 'item', :locals => { :item => @prompt_items[0], :prompt => @prompt, :add => 1, :side => 'left' }
+            #item_left_alt{:style => 'display:none'}
+              = render :partial => 'item', :locals => { :item => @next_items[0], :prompt => @next, :add => 2, :side => 'left' } if @next
+            = render :partial => 'shared/flag', :locals => { :obj => @prompt_items[0], :obj_class => 'item', :suffix => 'left', :onclick => "Item.flag('left')" }
+    %td.versus
+      #versus= t('items.versus')
+    %td.item
+      %table.boxing{:align => 'left'}
+        %tr
+          %td
+            #item_right= render :partial => 'item', :locals => { :item => @prompt_items[1], :prompt => @prompt, :add => 1, :side => 'right' }
+            #item_right_alt{:style => 'display:none'}
+              = render :partial => 'item', :locals => { :item => @next_items[1], :prompt => @next, :add => 2, :side => 'right' } if @next
+            = render :partial => 'shared/flag', :locals => { :obj => @prompt_items[1], :obj_class => 'item', :suffix => 'right', :onclick => "Item.flag('right')" }
+  %tr
+    %td
+    %td.versus
+      .skip#skip_outer
+        = rounded(skip_link)
+%span#timing{:style => "display:none"}= javascript_tag "eval('Prompt.Time.reset_()')"
+.underline
+.stats
+  %div
+    = @logged_in ? render(:partial => 'welcome_user') : render(:partial => 'welcome')
+  %table.last#last= render :partial => 'last_container'
+= google_tracking_script

@@ -1,0 +1,15 @@
+%h1= t('users.reset.h')
+.block
+  %p= t('users.reset.explain')
+  -form_tag({ :action => 'reset', :id => @user_id }) do
+    %table.session
+      %tbody.user
+        %tr
+          %td= label_tag t('form.password')
+          %td= password_field_tag :password, :value => ''
+        %tr
+          %td= label_tag 'password_confirmation', t('form.password_confirm')
+          %td= password_field_tag :password_confirmation, :value => ''
+        %tr
+          %td
+          %td.button= submit_tag(t('form.submit'), :class => 'submit')

@@ -1,0 +1,11 @@
+%h1= t 'users.h'
+%p.block
+%table
+  %tr
+    %td.signup
+      = error_messages_for :user
+      = render(:partial => 'form')
+    %td
+      %p
+    %td
+      = render :partial => 'shared/taglines'

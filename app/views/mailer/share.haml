@@ -1,0 +1,7 @@
+%h2== #{t('mailing.hello')} #{@mailing.name},
+%h3== #{@mailing.user.login} #{t('mailing.share.h')}
+%p= t('mailing.share.body')
+%br
+%br
+%br
+%h1= link_to('Photocracy.org', Constants::Urls::BASE)

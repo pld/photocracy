@@ -1,0 +1,16 @@
+%p
+  %strong Name:
+  =h @question.name
+
+%p
+  %strong Groups:
+  =h @question.groups.map { |g| g.name }
+
+-translations.each do |language, locale|
+  %p
+    %strong= language
+    =h @question.for_locale(locale)
+  
+= link_to 'Edit', edit_admin_question_path(@question)
+|
+= link_to 'Back', admin_questions_path

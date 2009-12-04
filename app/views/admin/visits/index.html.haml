@@ -1,0 +1,10 @@
+%h1 Visits
+%table
+  %tr
+    %th City (or IP or IP Hash)
+    %th Actions
+  %tbody#visits
+    = render :partial => 'visit', :collection => @visits
+= will_paginate @visits, :id => :paginate
+
+%p= link_to('parse location from ips', locate_admin_visits_path)

@@ -1,0 +1,17 @@
+.header
+  -form_for :profile, :url => language_profiles_path do |f|
+    %p= t('nav.language')
+    = select_tag :id, options_for_select(languages, I18n.locale), :onchange => "submit()"
+  %p= link_to t('nav.share'), share_path
+  %p= link_to_login_or_logout
+.links
+  .logo
+    = link_to(image_tag('title.png'), root_path, :class => 'title')
+    #stats.title= render :partial => 'shared/stats'
+  .nav
+    = nav_link t("nav.vote"), response_path(0)
+    = nav_link t("nav.add"), new_item_path
+    = nav_link t("nav.view"), items_path
+    = nav_link t("nav.recent"), responses_path
+    = nav_link t('nav.about'), about_path
+= javascript_tag "Locale.setStyle('#{I18n.locale}')"

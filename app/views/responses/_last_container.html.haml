@@ -1,0 +1,14 @@
+%tr
+  %td#last_left= render(:partial => 'last', :locals => { :item => @last.items[0] }) if @last
+  %td#last_right= render(:partial => 'last', :locals => { :item => @last.items[1] }) if @last
+  %td#last_left_alt{:style => 'display:none'}= render(:partial => 'last', :locals => { :item => @prompt.items[0] })
+  %td#last_right_alt{:style => 'display:none'}= render(:partial => 'last', :locals => { :item => @prompt.items[1] })
+%tr
+  %td.text.last_text{:colspan => 2, :style => "#{'display:none' if @last.nil?}"}= t('response.these_won')
+%tr
+  %td#last_percent_left= "#{@last_percent_wins[0].round}%" if @last
+  %td#last_percent_right= "#{@last_percent_wins[1].round}%" if @last
+  %td#last_percent_left_alt{:style => 'display:none'}== #{@current_percent_wins[0].round}%
+  %td#last_percent_right_alt{:style => 'display:none'}== #{@current_percent_wins[1].round}%
+%tr
+  %td.text.last.last_text{:colspan => 2, :style => "#{'display:none' if @last.nil?}"}= t('response.of_the_time')

@@ -1,0 +1,6 @@
+%p.name
+  %strong= comment.visit.user.login
+  == #{t('comment.says')}:
+%p= comment.content
+%small== #{t('comment.posted')} #{time_ago_in_words(comment.updated_at)} #{t('time.ago')}. ( #{flag_link(comment, true)} )
+= render :partial => 'shared/flag', :locals => { :obj => comment }

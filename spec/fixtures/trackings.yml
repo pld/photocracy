@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visit_id: 1
+  controller: MyString
+  action: MyString
+  parameters: MyString
+  created_at: <%= Time.now.to_s(:db) %>
+two:
+  visit_id: 1
+  controller: MyString
+  action: MyString
+  parameters: MyString
+  created_at: <%= Time.now.to_s(:db) %>

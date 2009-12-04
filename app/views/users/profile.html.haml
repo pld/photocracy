@@ -1,0 +1,10 @@
+-form_for :user, :url => { :action => :profile } do |f|
+  %table.session
+    %tbody.user
+      %tr
+        %td= f.label t('form.login')
+        %td= f.text_field :login
+      = render :partial => 'profiles/form', :locals => { :f => f, :sel_options => { :include_blank => true, :selected => '' } }
+    %tr
+      %td
+      %td.button= submit_tag t('form.signup'), :class => 'submit'

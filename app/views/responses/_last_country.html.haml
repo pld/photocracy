@@ -1,0 +1,6 @@
+%tbody
+  -last_countries(items).each do |class_name, pic, item_img, percent|
+    %tr
+      %td.flag= pic
+      %td.flag= item_img
+      %td{:class => class_name}= percent

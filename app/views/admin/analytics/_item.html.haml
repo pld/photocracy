@@ -1,0 +1,18 @@
+%tr
+  %td{:rowspan => 2}
+    = link_to_item(item, :compare, :width => 275)
+  -for question in Question.all
+    %td
+      -if item.questions.include?(question)
+        %p= image_tag("/admin/images/items/question_#{question.id}_item_#{item.id}.png")
+      -else
+        &nbsp;
+%tr
+  -for question in Question.all
+    %td
+      -if item.questions.include?(question)
+        %p
+          =number_to_percentage(item.win_percent(question.id), :precision => 2)
+          == (#{item.wins(question.id)} / #{item.ratings(question.id)})
+      -else
+        &nbsp;

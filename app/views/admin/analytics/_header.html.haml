@@ -1,0 +1,10 @@
+%p
+  = link_to('Site Analytics', admin_analytics_path)
+  = link_to('Items Analytics', :action => 'items')
+  = link_to('Item Usage Analytics', :action => 'items_use')
+  %br
+  %br
+  All statistics exclude logged in admin users and requests with 'bot' in the their user agent string.
+  %br
+  Updated
+  %strong= File.mtime("#{@path}all_visitors_per_day.png").to_s(:long)

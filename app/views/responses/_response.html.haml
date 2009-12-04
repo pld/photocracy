@@ -1,0 +1,9 @@
+%tr
+  %td &nbsp;
+  -for item in response.first
+    %td= link_to_item(item)
+  %td
+    %strong= response.first.empty? ? t('response.list.skipped') : t('response.list.over')
+  -for item in response.last
+    %td= link_to_item(item)
+  %td &nbsp;

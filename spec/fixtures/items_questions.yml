@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% 1.upto(15) do |i| %>
+item_question_<%= i %>:
+  item_id: <%= i %>
+  question_id: <%= (i%2).zero? ? 1 : 2 %>
+<% end %>

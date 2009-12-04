@@ -1,0 +1,11 @@
+-sel_options ||= {}
+%tr
+  %td= f.label t('profile.country')
+  %td= country_select_with_guess(sel_options)
+%tr
+  %td= f.label t('profile.birth_year')
+  %td= date_select_with_guess(sel_options)
+-profile_questions(sel_options).each do |el, field|
+  %tr
+    %td= f.label t("profile.#{el}")
+    %td= field

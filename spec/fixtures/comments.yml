@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item_id: 1
+  visit_id: 1
+  content: MyText
+  active: false
+  created_at: <%= Time.now.to_s(:db) %>
+
+two:
+  item_id: 1
+  visit_id: 1
+  content: MyText
+  active: false
+  created_at: <%= Time.now.to_s(:db) %>

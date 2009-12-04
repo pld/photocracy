@@ -1,0 +1,374 @@
+cn:
+  nav:
+    about: 关于Photocracy
+    add: 上传图片
+    feedback: k留想法
+    language: 语言
+    recent: 最新热门图片
+    send: 发给朋友
+    share: 与朋友分享
+    stats: 统计
+    view: 查看图片
+    vote: 投票
+    privacy: 隐私
+  datetime:
+    distance_in_words:
+      x_minute: 分钟以前
+      x_minutes: 分钟以前
+      x_hour: 小时以前
+      x_hours: 小时以前
+      x_day: 天以前
+      x_days: 天以前
+      x_month: 月以前
+      x_months: 月以前
+      x_year: 年以前
+      x_years: 年以前
+      about_x_minute: 分钟以前
+      about_x_minutes: 分钟以前
+      about_x_hour: 小时以前
+      about_x_hours: 小时以前
+      about_x_day: 天以前
+      about_x_days: 天以前
+      about_x_month: 月以前
+      about_x_months: 月以前
+      about_x_year: 年以前
+      about_x_years: 年以前
+  activerecord:
+    attributes:
+      user:
+        email: 电子邮件
+        password: 密码
+        password_confirmation: 确认密码
+      mailing:
+        message: 意见
+        name: 姓名
+        email: 电子邮件
+      flag:
+        flag_type_id: 类
+    errors:
+      template:
+        header: 问题造成障碍
+        body: 下面有了几个问题
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: can't be blank需要填表
+              too_short: 太短(需要六个字以上)
+            password:
+              blank: 需要填表
+              too_short: 太短(需要六个字以上)
+            email:
+              blank: 需要填表
+              too_short: 太短(需要六个字以上)
+              invalid: 应该像电子邮件
+            login:
+              too_short: 太短(需要三个字以上)
+              invalid: “<br/> 请只用字,数字,和 .-@.”
+        mailing:
+          attributes:
+            name:
+              blank: 需要填表
+            message:
+              blank: 需要填表
+            email:
+              blank: 需要填表
+              too_short: 太短(需要六个字以上)
+              invalid: 应该像电子邮件
+        flag:
+          attributes:
+            flag_type_id:
+              blank: 需要填表
+        comment:
+          attributes:
+            content:
+              blank: 需要填表
+  actions: 
+    edit: 编辑
+    whatsthis: 怎么使用
+    or: 或
+    loading: 正在装载
+    please: 请
+    back_to_voting: 回到选图片
+    click: 点击你的选择
+  errors:
+    e5xx: 对不起,竟然遇到问题<br/>这被据报,等到查看
+    e404: 找不到网页
+    restricted: 请登录或注册
+    logout: 已经登录了
+  time:
+    ago: 以前
+    added: 添加了
+  share:
+    h: 分享
+    name: e朋友姓
+    email: l朋友电子邮件
+  stats:
+    h: 统计
+    votes: 选票
+    vote: 选择
+    votes_on: 得票数
+  feedback:
+    h: k想法
+    success: 谢谢你发给我们你的想法!祝你好好享受 Photocracy!
+    name: 你的姓名
+    email: 你的电子邮件
+    type: 想法类
+    types: 关于网站,更多信, 息,合作,研究家的问题,网站问题,其它
+  comment:
+    flag:
+      success: 这意见被举报
+    add: 添加意见
+    comment: 意见
+    success: 你的意见发出了
+    user: 用户
+    time: 时间
+    login: 先登录才意见
+    posted: 意见了
+    says: 写了
+  flag:
+    comment: 意见
+    h: 举报
+    type: 类
+    copyright: 违反版权
+    offensive: 内容不当
+    other: 其它
+    success: 这张被举报
+  form:
+    all_countries: 所有国家
+    attribution: 摄影师
+    cancel: 取消
+    create: 制造
+    email: 电子邮件
+    login: 登录
+    user_name: 用户名
+    message: 意见
+    name: 姓名
+    password: 密码
+    password_confirm: 确认密码
+    remember: 记住我
+    select: 选择
+    submit: 送出
+    signup: 注册
+    update: 更新
+    photo: 图片
+    description: 内容叙述
+    tags: 标签
+    how_you_appear: 这是你公共用户名
+    choose_user_name: 这将成为您的使用者名称<br/> 请在下面选择您的使用者名称
+    please_enter_the: 请写 
+    displayed_text: 显示文字
+  item:
+    inactive: inactive
+    taken_by: 摄影师
+    not_approved: 还没被接受
+    flag:
+      success: 这张被举报
+    send:
+      h: 发给朋友
+      name: 名
+      email: 电子邮件
+      message: 消息
+      success: 消息传送了
+    submit:
+      fail:
+        h: 上传不了看看问题
+        upload: 上传或形式问题
+        flickr: 找不到这张的Flickr ID
+        url: 无效URL或图片形式
+      h: 添加图片
+      agree:
+        have_rights: 我有这张的使用权,我想把图片添加
+        is_in_cc: 或这张已经在
+        fail: 要上传,先同意上面所写的
+      name: 用户名
+      question: 问题
+      recently: 最新图片
+      p_1: Photocracy拥护可将他们自己的照片中最能代表中国日本或美国的作品上载到网页。其他在公有领域中的照片也欢迎提供。
+      p_2: 只须提供您图片的URL或上载图片就可。同时也可提供图片说明。可以用的图片式包括:JPG,GIF,PNG,和BMP
+      agree_and_contact: 要上传,先同意上面所写的如果有问题的话,请发给我们电子邮件
+      upload: 上载
+      flickr: Flickr
+      url: URL
+      flickr_id: Flickr ID
+      type: 上载方式
+      instructions:
+        upload: 上载电脑上的图片
+        flickr: 用Flickr上载
+        url: 用URL上载
+    comments: 意见
+    create: 上传了! 等待检阅中
+    details: 图片内容
+    list: 显示所有
+    name: 题目
+    ratings: 评分
+    show: 消息
+    user: 用户名
+    date: 时间
+  items:
+    h: 图片
+    versus: 比
+    not_enough_votes: Not enough votes
+    which_best: 你最喜爱图片
+    according_to: 来自不同国家地区选票
+    anonymous: 匿名
+    yours: 你所上载图片中最热门图片
+    votes_from_country: 来自
+    for: 为
+    users_country: 以拥护者国籍分类
+    image: 图片
+    order_by: 以???分类
+    question: 问题
+    order:
+      date: 时间
+      percent: 获胜百分比
+      rank: 级
+      score: 得分
+    photo: 图片
+    photos: 图片
+    sort: 分类
+  mailing:
+    success: 你的消息发出了
+    failure: An error occured and your message could not be sent.
+    success: Your message has been sent.
+    hello: Hello
+    photo: photo
+    item:
+      link: 点击这里
+      subject: 发给你一张图片
+    reset:
+      h: Your password has been reset.
+      explain: Visit this URL to reset your password
+    share:
+      h: !刚才给你分享Photocracy!
+      body: Photocracy使用交叉比较方式 去测量对中国,日本，美国之间文化及国家的不同看法。主要的目的是了解什么最能 代表这三个国家及不同国籍的不同看法。
+  profile:
+    h: 个人资料
+    age: 年龄
+    country: 居住国家?
+    sex: 性别
+    birth_year: 什么时候出生?
+    country_question: 居住国家?
+    create: 建立个人档案
+    edit: 编辑个人档案
+    education: 教育水平?
+    edu_options:
+      none: 缺乏
+      middle: 中学
+      high: 高学
+      college: 本科学
+      grad: 研究学
+    gender: 你的别性别?
+    gen_options:
+      man: 男性
+      woman: 女性
+      other: 其它
+    language: 母语
+    lan_options:
+      chinese_s: 中文(简体)
+      chinese_t: 中文(繁体)
+      chinese_sh: 中文(上海)
+      chinese_ct: 中文(粤语)
+      japanese: 日语
+      english: 英语
+      other: 其它
+    last: 最新
+    location: 从哪里上这网站
+    loc_options:
+      work: 办公室
+      home: 住家
+      school: 学校
+      other: 其它
+    add_languages: 外语能力
+    abroad: 外语经历
+    abroad_options:
+      none: 缺乏
+      little: 很少
+      medium: 一般
+      large: 每日
+    birth_country: 出生国
+    profession: 职业
+    missing: 请建立个人档案
+    new: 新个人档案
+    show: 显示
+    success: 更新好了!
+  response:
+    these_won: ''
+    of_the_time: 分别获胜百分比
+    add_stats: 其它统计
+    all_votes: 总票数
+    by_country: 以国家分类
+    previous: 上一张
+    question: 问题
+    recent: 最新被选为
+    skip: 跳过
+    slow: 你太快,我赶不上...情慢慢一点选
+    votes: 票
+    list:
+      skipped: 未投
+      over: over
+  sessions:
+    fail: "登录不成,用户:"
+    h: 登录
+    logout: 退出了
+    submit: 登录
+    success: 登录成功
+    captcha_error: 要继续请在CAPTCHA 输入内容
+  users:
+    tag_lines: After Sign up you can
+    vote: 选择
+    captcha_error: CAPTCHA错误,请再输入
+    activate:
+      success: 建立成功!请登录
+      fail_missing: 没有确认号, 请使用电子邮件中的URL
+      fail_code: 我们找不到这个确认号. 是否收到我们的电子邮件?或是已登记?请登录。
+    create: 加入Photocracy
+    error: 对不起,无法建立。请再试。
+    in: 用户名
+    login: 登录
+    logout: 退出
+    out: 未登录
+    signup: 注册
+    signup_for: 加入Photocracy
+    reasons:
+      upload: 上传图片
+      track: 看你选票
+      view: 看结果
+      comment: 意见
+    success: 谢谢!Photocracy正在发确认号给你, 请检查电子邮件
+    welcome: 欢迎
+    you_have_rated: 你投了
+    this_makes: 现在你就是Photocracy
+    most: 最
+    influential_rater: 有影响力的用户
+    this_visit: 这次浏览
+    logged_out_welcome: 已经注册了?登录.没注册?
+    photos_added: 你添加了
+    have_received: 一共收到XXX以上
+    has_received: 一共收到XXX以上
+    h: 注册
+    for: 为
+  about:
+    h: 关于Photocracy
+    paragraph_1: Photocracy使用交叉比较方式去测量对中国,日本，美国之间文化及国家的不同看法。主要的目的是去了解什么最能代表哪一个国家及不同国籍的不同看法。
+    see_results: see the results
+    paragraph_2a: 这个网站提供拥护一连串两张图片,且问哪张图片最能代表某个国家。越被选择的图片越有代表性。越多人选择,越准确,所以请大家告诉大家!
+    upload_it: upload it
+    paragraph_2b: .  We've even made it easy for you to
+    from_flickr: upload photos directly from Flickr
+    paragraph_3a: 伦隐私政策,这网站第一届所收集的资料为一位普林斯顿大学论文加强了解而结论.所有网站资料将成为普林斯顿大学论文之资料并受隐私政策保护。
+    upload_some: upload some photos
+    paragraph_3b: 热情感谢你的合作与时间!有问题或建议的话请发给我们电子邮件吧!
+    our_feedback_form: our feedback form
+    email: email
+    salutation: Sincerely,
+    matt:
+      title: 普林斯顿大学,社会学系,副教授
+    josh:
+      title: 普林斯顿大学,东亚学系,09年龄
+    right_h: 联络
+    technical: 网络设计师
+    contact: 联络网站管理者
+  privacy:
+    h: 隐私
+    contact: 联络

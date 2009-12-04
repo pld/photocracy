@@ -1,0 +1,2 @@
+= link_to_remote rounded(item_display(item, :compare, :id => "item_#{item.id}")), :url => { :action => :create, :item_id => item.id, :prompt_id => prompt.id }, :condition => "!Prompt.Time.toFast()", :html => { :onclick => "Item.click('#{item.id}', #{progress_step});", :id => item.id }, :with => "Prompt.with_(#{progress_step})"
+.flag= link_to_function(t('flag.h').downcase, "$('#flag_item_#{side}').toggle()")

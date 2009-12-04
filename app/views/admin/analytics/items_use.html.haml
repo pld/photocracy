@@ -1,0 +1,33 @@
+.stat-border
+  = render :partial => 'header'
+  -group = 'items'
+  = country_plot_select(group)
+  = stat_select(group, cap_options(stat_types_items))
+  %strong= group.humanize
+  -for type in stat_types_items
+    -for country in @all
+      -id = "#{country.downcase}_#{type}_#{group}"
+      %p{:class => "plot_#{group}", :id => id, :style => 'display:none'}= image_tag("/admin/images/#{id}.png")
+  = javascript_tag "$('#all_last_visit_items').show()"
+  %p
+    %strong Visits with no votes are ignored.
+    %br
+    Updated
+    %strong= File.mtime("#{@path}#{@all.first.downcase}_last_visit_items.png").to_s(:long)
+  %center
+    %table
+      %tr
+        %th Item
+        %th Times last Item seen
+        %th Percent last Item seen from all times seen
+      = render :partial => 'item_use', :collection => @lasts
+  %br
+  %br
+  %center
+    %table
+      %tr
+        %th Item
+        %th Times Skipped
+        %th Percent item skipped from all times seen
+      = render :partial => 'item_use', :collection => @skips
+  = render :partial => 'footer'

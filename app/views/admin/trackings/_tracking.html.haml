@@ -1,0 +1,8 @@
+%tr
+  %td= time_ago_in_words(tracking.created_at) + " ago"
+  %td= tracking.visit.user ? link_to(tracking.visit.user.email, admin_user_path(tracking.visit.user)) : link_to(tracking.visit.ip_address, admin_visit_path(tracking.visit_id))
+  %td=h tracking.controller
+  %td=h tracking.action
+  %td=h truncate tracking.parameters
+  %td
+    = link_to 'Show', admin_tracking_path(tracking)

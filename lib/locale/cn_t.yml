@@ -1,0 +1,374 @@
+cn_t:
+  nav:
+    about: 關于Photocracy
+    add: 上傳圖片
+    feedback: 留想法
+    language: 語言
+    recent: 新熱門圖片
+    send: 發給朋友
+    share: 分享
+    stats: 統計
+    view: 查看圖片
+    vote: 投票
+    privacy: 隱私
+  datetime:
+    distance_in_words:
+      x_minute: 分鐘以前
+      x_minutes: 分鐘以前
+      x_hour: 小時以前
+      x_hours: 小時以前
+      x_day: 天以前
+      x_days: 天以前
+      x_month: 月以前
+      x_months: 月以前
+      x_year: 年以前
+      x_years: 年以前
+      about_x_minute: 分鐘以前
+      about_x_minutes: 分鐘以前
+      about_x_hour: 小時以前
+      about_x_hours: 小時以前
+      about_x_day: 天以前
+      about_x_days: 天以前
+      about_x_month: 月以前
+      about_x_months: 月以前
+      about_x_year: 年以前
+      about_x_years: 年以前
+  activerecord:
+    attributes:
+      user:
+        email: 電子郵件
+        password: 密碼
+        password_confirmation: 确認密碼
+      mailing:
+        message: 評論
+        name: 姓名
+        email: 電子郵件
+      flag:
+        flag_type_id: 类
+    errors:
+      template:
+        header: 問題造成障礙
+        body: 下面有了几個問題
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: 需要填表
+              too_short: 太短(需要六個字以上)
+            password:
+              blank: 需要填表
+              too_short: 太短(需要六個字以上)
+            email:
+              blank: 需要填表
+              too_short: 太短(需要六個字以上)
+              invalid: 應該像電子郵件
+            login:
+              too_short: 太短(需要三個字以上)
+              invalid: "<br/> 請只用字,數字,和 .-@."
+        mailing:
+          attributes:
+            name:
+              blank: 需要填表
+            message:
+              blank: 需要填表
+            email:
+              blank: 需要填表
+              too_short: 太短(需要六個字以上)
+              invalid: 應該像電子郵件
+        flag:
+          attributes:
+            flag_type_id:
+              blank: 需要填表
+        comment:
+          attributes:
+            content:
+              blank: 需要填表
+  actions: 
+    edit: 編輯
+    whatsthis: 怎么使用
+    or: 或
+    loading: 正在裝載
+    please: 請
+    back_to_voting: 回到選圖片
+    click: 單擊你的選擇
+  errors:
+    e5xx: 对對不起,竟然遇到問題<br/>這被據報,等到查
+    e404: 找不到网頁
+    restricted: 請登錄或注冊
+    logout: 已經登錄了
+  time:
+    ago: 以前
+    added: 添加了
+  share:
+    h: 分享
+    name: 朋友姓名
+    email: 朋友電子郵件
+  stats:
+    h: 統計
+    votes: 選票
+    vote: 選擇
+    votes_on: 得票數
+  feedback:
+    h: 想法
+    success: !謝謝你發給我們你的想法!祝你好好享受Photocracy!
+    name: 你的姓名
+    email: 你的電子郵件
+    type: 想法類
+    types: 關於網站,更多信息,合作,研究家的問題,網站問題,其它
+  comment:
+    flag:
+      success: 這評論被舉報
+    add: 添加評論
+    comment: 評論
+    success: 你評論發出了
+    user: 用戶
+    time: 時間
+    login: 先登錄才評論
+    posted: 評論了
+    says: 寫了
+  flag:
+    comment: 評論
+    h: 舉報
+    type: 類
+    copyright: 版權
+    offensive: 內容
+    other: 其它
+    success: 這張被舉報
+  form:
+    all_countries: 所有國家
+    attribution: 攝影師
+    cancel: 取消
+    create: 制造
+    email: 電子郵件
+    login: 登錄
+    user_name: 用戶名
+    message: 評論
+    name: 姓名
+    password: 密碼
+    password_confirm: 确認密碼
+    remember: 記住我
+    select: 選擇
+    submit: 發布
+    signup: 注冊
+    update: 更新
+    photo: 圖片
+    description: 消息
+    tags: 標簽
+    how_you_appear: 這是你公共用戶名
+    choose_user_name: 這將成為您的使用者名稱<br/> 請在下面選擇您的使用者名稱
+    please_enter_the: 請寫 
+    displayed_text: 顯示文字
+  item:
+    inactive: inactive
+    taken_by: 攝影師
+    not_approved: 還沒被接受
+    flag:
+      success: 這張舉報
+    send:
+      h: 發給朋友
+      name: 名
+      email: 電子郵件
+      message: 消息
+      success: 消息發出了
+    submit:
+      fail:
+        h: 上傳不了看看問題
+        upload: 上傳或形式問題
+        flickr: 找不到這張的Flickr ID
+        url: 無效URL或圖片形式
+      h: 添加圖片
+      agree:
+        have_rights: 這張圖片是我的,我想把圖片添加
+        is_in_cc: 或這張已經在
+        fail: 要上傳,先同意上面所寫的
+      name: 用戶名
+      question: 問題
+      recently: 最新圖片
+      p_1: 擁護者可添加照片,從他們怎么從自己照相机來看不同國家或祖國.如果擁有几張适圖片,可以標志(或不可標志)中國,日本,和美國,請在Photocracy上傳給別人看你角度.擁護者也可以把其它未版權照權上傳給Photocracy.
+      p_2: 要為Photocracy投稿,只要上載你自己圖片,添加一張在Flickr的圖片,或在网上的圖片.也可任意選擇添加消息.可以用的圖片式包括:JPG,GIF,PNG,和BMP
+      agree_and_contact: 要上傳,先同意上面所寫的如果有問題的話,請發給我們電子郵件
+      upload: 上載
+      flickr: Flickr
+      url: URL
+      flickr_id: Flickr ID
+      type: 上載方式
+      instructions:
+        upload: 上載電腦上的圖片
+        flickr: 用Flickr上載
+        url: 用URL上載
+    comments: 評論
+    create: 上傳了!等待檢閱(者)
+    details: 圖片信息
+    list: 顯示所有
+    name: 題目
+    ratings: 選票
+    show: 消息
+    user: 用戶名
+    date: 時間
+  items:
+    h: 圖片
+    versus: 比
+    not_enough_votes: Not enough votes
+    which_best: 你最喜愛圖片
+    according_to: 來自不同國家地區選票
+    anonymous: 匿名
+    yours: 你所上載圖片中最熱門圖片
+    votes_from_country: 來自
+    for: 為
+    users_country: 分類祖國是
+    image: 圖片
+    order_by: 論
+    question: 問題
+    order:
+      date: 時間
+      percent: 百分比獲胜
+      rank: 級
+      score: 得分
+    photo: 圖片
+    photos: 圖片
+    sort: 分類
+  mailing:
+    success: 你消息發出了
+    item:
+      link: 單擊這裡來看
+      subject: 發給你一張圖片
+    failure: An error occured and your message could not be sent.
+    success: Your message has been sent.
+    hello: Hello
+    photo: photo
+    reset:
+      h: Your password has been reset.
+      explain: Visit this URL to reset your password
+    share:
+      h: !剛纔給你分享Photocracy!
+      body: Photocracy使用交叉比較方式去測量對中國,日本，美國之間文化及國家的不同看法。主要的目的是了解什么最能代表這三個國家及不同國籍的不同看法
+  profile:
+    h: 個人資料
+    age: 年齡
+    country: 居住國家?
+    sex: 性別
+    birth_year: 什么時候出生
+    country_question: 居住國家?
+    create: 制造個性
+    edit: 編輯個人資料
+    education: 教育水平?
+    edu_options:
+      none: 缺乏
+      middle: 中學
+      high: 高學
+      college: 本科學
+      grad: 研究學
+    gender: 你的別性別?
+    gen_options:
+      man: 男性
+      woman: 女性
+      other: 其它
+    language: 母語
+    lan_options:
+      chinese_s: 中文(簡体)
+      chinese_t: 中文(繁体)
+      chinese_sh: 中文(上海)
+      chinese_ct: 中文(粵語)
+      japanese: 日語
+      english: 英語
+      other: 其它
+    last: 最新
+    location: 從哪里上這网站
+    loc_options:
+      work: 辦公室
+      home: 家
+      school: 學校
+      other: 其它
+    add_languages: 外語能力
+    abroad: 外語經歷
+    abroad_options:
+      none: 缺乏
+      little: 很少
+      medium: 一般
+      large: 每日
+    birth_country: 祖國
+    profession: 專業
+    missing: 請創造個人資料
+    new: 新帳戶
+    show: 顯示
+    success: 更新好了!
+  response:
+    these_won: ''
+    of_the_time: 分別獲勝百分比
+    add_stats: 其它統計
+    all_votes: 全選票
+    by_country: 分類國家
+    previous: 上一張
+    question: 問題
+    recent: 最新選擇為
+    skip: 下一雙
+    slow: 你太快,我赶不上...情慢慢一點選
+    votes: 選票
+    list:
+      skipped: 未投
+      over: over
+  sessions:
+    fail: "登錄不成,用戶:"
+    h: 登錄
+    logout: 退出了
+    submit: 登錄
+    success: 登錄好了
+    captcha_error: 要繼續請在CAPTCHA 輸入內容
+  users:
+    tag_lines: After Sign up you can
+    vote: 選擇
+    captcha_error: CAPTCHA寫錯了.請重新寫
+    activate:
+      success:!請登錄
+      fail_missing: 沒有确認號, 請查看你電子郵件
+      fail_code: 我們找不到那個确認號.你可能已經确認了,要不然查看你電子郵件活登錄
+    create: 加入Photocracy
+    error: 對不起,未制造,請再試試
+    in: 用戶名
+    login: 登錄
+    logout: 退出
+    out: 未登錄
+    signup: 注冊
+    signup_for: 加入Photocracy
+    reasons:
+      upload: 上傳圖片
+      track: 看你選票
+      view: 看結果
+      comment: 評論
+    success: 謝謝!Photocracy正在發确認號給你, 看看電子郵件
+    welcome: 歡迎
+    you_have_rated: 你投了
+    this_makes: 現在你就是Photocracy
+    most: 最
+    influential_rater: 有影響力的用戶
+    this_visit: 這次瀏覽
+    logged_out_welcome: 已經注冊了?登錄.沒注冊?
+    photos_added: 你添加了
+    have_received: 一共收到XXX以上
+    has_received: 一共收到XXX以上
+    h: 注冊
+    for: 為
+  about:
+    h: 關于Photocracy
+    paragraph_1: 拿兩個不同圖片來比較.用戶選擇之后,用不同的一雙.每一网民有權,不用登錄就可以隨便選.要添加照片或留言才需要登錄以最被网民選擇的圖片來判斷那一張最標志國粹.最后分析不同國家怎么看不同國家和祖國.用戶越多結果越好,請朋友們,同學們,老師們提供他們角度!
+    see_results: see the results
+    paragraph_2a: Photocracy問用戶者"哪張更代表{國家}?":選擇一張后,用戶將再有兩張可選擇的圖片.如果擁護者多,擁護者所投的票多,結果由投票可以選出最有代表性的圖片.因此,請參与以及轉告朋友參与
+    upload_it: upload it
+    paragraph_2b: .  We've even made it easy for you to
+    from_flickr: upload photos directly from Flickr
+    paragraph_3a: 倫隱私,這网站第一屆所收集的資料為一位普林斯頓大學論文加強了解而結論
+    upload_some: upload some photos
+    paragraph_3b: 熱情感謝你相看目標和你合作.有問題或建議的話請發給我們電子郵件吧!
+    our_feedback_form: our feedback form
+    email: email
+    salutation: Sincerely,
+    matt:
+      title: 普林斯頓大學,社會學系,副教授
+    josh:
+      title: 普林斯頓大學,東亞學系,09年齡
+    right_h: 聯絡
+    technical: 网絡設計師
+    contact: 聯絡网站管理者
+  privacy:
+    h: 隱私
+    contact: 聯絡

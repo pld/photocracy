@@ -1,0 +1,17 @@
+-obj_class ||= obj.class.to_s.downcase
+-suffix ||= obj.id
+%div{:id => "flag_#{obj_class}_#{suffix}", :style => "#{'display:none' unless @flag}", :class => 'flag-box'}
+  %h2= t('flag.h')
+  -flag_form_tag(suffix || '') do |f|
+    -if @flag
+      #flag_errors= error_messages_for('flag')
+    -else
+      .errorExplanation#flag_errors{:style => "#{'display:none'}"}== #{t('form.please_enter_the')} #{t('flag.type')}
+    %h3= f.label t('flag.type')
+    = f.select :flag_type_id, FlagType.find(:all).collect { |type| [t("flag.#{type.name}"), type.id] }.unshift([nil,nil]), {:selected => nil}, { :id => "flag_flag_type_id_#{suffix}" }
+    %h3= f.label t('flag.comment')
+    = f.text_area :content, :size => '34x6', :id => "flag_content_#{suffix}"
+    = f.hidden_field "#{obj_class}_id", :value => obj.id, :id => "flag_item_id_#{suffix}"
+    %p
+      = submit_tag t("form.cancel"), :onclick => "$('#flag_#{obj_class}_#{suffix}').hide(); return false", :class => 'submit'
+      = submit_tag t('form.submit'), :onclick => "#{onclick ||= ''}", :class => 'submit'

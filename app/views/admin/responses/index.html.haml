@@ -1,0 +1,13 @@
+%h1 Listing responses
+
+%table
+  %tr
+    %th Vote id ext
+    %th Response Time
+    %th Actions
+  -for response in @responses
+    %tr
+      %td=h response.vote_id_ext
+      %td=h response.response_time
+      %td
+        = link_to 'Show', admin_response_path(response)

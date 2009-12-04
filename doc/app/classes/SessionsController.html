@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: SessionsController</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">SessionsController</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/app/controllers/sessions_controller_rb.html">
+                app/controllers/sessions_controller.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="ApplicationController.html">
+                ApplicationController
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This controller handles the login/logout function of the site.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000091">captcha?</a>&nbsp;&nbsp;
+      <a href="#M000089">create</a>&nbsp;&nbsp;
+      <a href="#M000088">denied</a>&nbsp;&nbsp;
+      <a href="#M000090">destroy</a>&nbsp;&nbsp;
+      <a href="#M000087">new</a>&nbsp;&nbsp;
+      <a href="#M000092">note_failed_signin</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">ReCaptcha::AppHelper</span>
+        <span class="include-name"><a href="Constants/Login.html">Constants::Login</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="#M000091" class="method-signature">
+          <span class="method-name">captcha?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000091-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 49</span>
+49:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">captcha?</span>
+50:     <span class="ruby-ivar">@captcha_valid</span> = (<span class="ruby-identifier">login_attempts</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MAX_LOGIN_ATTEMPTS</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">validate_recap</span>(<span class="ruby-identifier">params</span>, <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">errors</span>))
+51:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+          <a href="#M000089" class="method-signature">
+          <span class="method-name">create</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000089-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 16</span>
+16:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
+17:     <span class="ruby-identifier">logout_keeping_session!</span>
+18:     <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:email</span>], <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:password</span>]) <span class="ruby-operator">||</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+19:     <span class="ruby-ivar">@captcha_valid</span> = (<span class="ruby-identifier">login_attempts</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MAX_LOGIN_ATTEMPTS</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">validate_recap</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">errors</span>))
+20:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">user</span>.<span class="ruby-identifier">new_record?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@captcha_valid</span>
+21:       <span class="ruby-comment cmt"># Protects against session fixation attacks, causes request forgery</span>
+22:       <span class="ruby-comment cmt"># protection if user resubmits an earlier form using back</span>
+23:       <span class="ruby-comment cmt"># button. Uncomment if you understand the tradeoffs.</span>
+24:       <span class="ruby-comment cmt"># reset_session</span>
+25:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">current_user</span> = <span class="ruby-identifier">user</span>
+26:       <span class="ruby-identifier">new_cookie_flag</span> = (<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:remember_me</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;1&quot;</span>)
+27:       <span class="ruby-identifier">handle_remember_cookie!</span> <span class="ruby-identifier">new_cookie_flag</span>
+28:       <span class="ruby-identifier">setup_user</span>
+29:       <span class="ruby-identifier">redirect_back_or_default</span>(<span class="ruby-value str">'/'</span>)
+30:       <span class="ruby-identifier">failed_logins</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">delete</span> }
+31:       <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-value str">'sessions.success'</span>)
+32:     <span class="ruby-keyword kw">else</span>
+33:       <span class="ruby-identifier">note_failed_signin</span>
+34:       <span class="ruby-ivar">@email</span>       = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:email</span>]
+35:       <span class="ruby-ivar">@remember_me</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:remember_me</span>]
+36:       <span class="ruby-identifier">render</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'new'</span>
+37:     <span class="ruby-keyword kw">end</span>
+38:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+          <a href="#M000088" class="method-signature">
+          <span class="method-name">denied</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000088-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 14</span>
+14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">denied</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
+
+        <div class="method-heading">
+          <a href="#M000090" class="method-signature">
+          <span class="method-name">destroy</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000090-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 40</span>
+40:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
+41:     <span class="ruby-identifier">save_prompt_to_visit</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">active_prompt</span>
+42:     <span class="ruby-identifier">locale</span> = <span class="ruby-identifier">session</span>[<span class="ruby-identifier">:locale</span>]
+43:     <span class="ruby-identifier">logout_keeping_session!</span>
+44:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">locale</span> = <span class="ruby-identifier">locale</span>
+45:     <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-value str">'sessions.logout'</span>)
+46:     <span class="ruby-identifier">redirect_back_or_default</span>(<span class="ruby-value str">'/'</span>)
+47:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
+
+        <div class="method-heading">
+          <a href="#M000087" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+caches_page :<a href="SessionsController.html#M000087">new</a>, :<a
+href="SessionsController.html#M000088">denied</a>, :layout =&gt; false
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000087-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 12</span>
+12:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="#M000092" class="method-signature">
+          <span class="method-name">note_failed_signin</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Track failed login attempts
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000092-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/sessions_controller.rb, line 55</span>
+55:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">note_failed_signin</span>
+56:     <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-node">&quot;#{t('sessions.fail')} '#{params[:email].to_s}'&quot;</span>
+57:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@captcha_valid</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+58:       <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-node">&quot;#{t('sessions.captcha_error')}&lt;br/&gt;&lt;br/&gt;#{flash[:error]}&quot;</span>
+59:     <span class="ruby-keyword kw">else</span>
+60:       <span class="ruby-identifier">failed_logins</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">logins</span><span class="ruby-operator">|</span> <span class="ruby-identifier">logins</span>.<span class="ruby-identifier">update_attribute</span>(<span class="ruby-identifier">:value</span>, <span class="ruby-identifier">logins</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>) } <span class="ruby-operator">||</span>
+61:       <span class="ruby-constant">Param</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_visit</span>.<span class="ruby-identifier">ip_address</span>, <span class="ruby-identifier">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+62:     <span class="ruby-keyword kw">end</span>
+63:     <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Failed login for '#{params[:email]}' from #{request.remote_ip} with visit #{current_visit_id} at #{Time.now.utc}&quot;</span>
+64:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
